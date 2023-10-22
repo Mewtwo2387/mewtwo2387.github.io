@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>EmbedGen</title>
+    <meta property="og:title" content="">
+    <meta property="og:url" content="">
+    <meta property="og:description" content="">
+</head>
+<body>
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const title = urlParams.get('title');
+        const url = urlParams.get('url');
+        const description = urlParams.get('description');
+        
+        const ogTitleMeta = document.querySelector('meta[property="og:title"]');
+        ogTitleMeta.setAttribute('content', title);
+        
+        const ogUrlMeta = document.querySelector('meta[property="og:url"]');
+        ogUrlMeta.setAttribute('content', url);
+        
+        const ogDescMeta = document.querySelector('meta[property="og:description"]');
+        ogDescMeta.setAttribute('content', description);
+    </script>
+</body>
