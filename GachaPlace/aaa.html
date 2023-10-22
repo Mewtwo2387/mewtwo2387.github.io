@@ -1,0 +1,197 @@
+<html>
+    <head>
+        <style>
+            .h:hover{
+                background-color:#ad7100 !important;
+            }
+            .h:hover:active{
+                animation-name: b;
+                animation-duration: 0.2s;
+                animation-iteration-count: 1;
+            }
+            @keyframes b{
+            0% {
+            transform: scale(1, 1);
+            }
+            50% {
+            transform: scale(0.95, 0.95);
+            }
+            100% {
+            transform: scale(1, 1);
+            }
+            }
+        </style>
+    </head>
+    <body style="background-color:#AAAAAA">
+        <canvas id="canvas" width="500" height="500" style="position:absolute;left:150px;background-color:white"></canvas>
+        <div style="position:absolute;left:10px;right:10px;height:200px;bottom:5px;background-color:white;border-radius:20px;border:2px solid #555555">
+            <div style="position:absolute;left:20px;right:20px;top:10px;height:100px">
+                <div id="d0" onclick="d(0);" style="display:inline-block;height:100px;width:70px;border:2px solid #111111;border-radius:10px;text-align:center;background-color:#999999;">
+                    <div style="display:block;height:40px;width:40px;margin-left:15px;margin-top:15px;background-color:red;"></div>
+                    <h2 style="margin:8px;font-family:arial;font-weight:normal" id="0">0</h2>
+                </div>
+                <div id="d1" onclick="d(1);" style="display:inline-block;height:100px;width:70px;border:2px solid #BBBBBB;border-radius:10px;text-align:center;background-color:#999999;">
+                    <div style="display:block;height:40px;width:40px;margin-left:15px;margin-top:15px;background-color:orange;"></div>
+                    <h2 style="margin:8px;font-family:arial;font-weight:normal" id="1">0</h2>
+                </div>
+                <div id="d2" onclick="d(2);"style="display:inline-block;height:100px;width:70px;border:2px solid #BBBBBB;border-radius:10px;text-align:center;background-color:#999999;">
+                    <div style="display:block;height:40px;width:40px;margin-left:15px;margin-top:15px;background-color:yellow;"></div>
+                    <h2 style="margin:8px;font-family:arial;font-weight:normal" id="2">0</h2>
+                </div>
+                <div id="d3" onclick="d(3);"style="display:inline-block;height:100px;width:70px;border:2px solid #BBBBBB;border-radius:10px;text-align:center;background-color:#999999;">
+                    <div style="display:block;height:40px;width:40px;margin-left:15px;margin-top:15px;background-color:green;"></div>
+                    <h2 style="margin:8px;font-family:arial;font-weight:normal" id="3">0</h2>
+                </div>
+                <div id="d4" onclick="d(4);"style="display:inline-block;height:100px;width:70px;border:2px solid #BBBBBB;border-radius:10px;text-align:center;background-color:#999999;">
+                    <div style="display:block;height:40px;width:40px;margin-left:15px;margin-top:15px;background-color:lime;"></div>
+                    <h2 style="margin:8px;font-family:arial;font-weight:normal" id="4">0</h2>
+                </div>
+                <div id="d5" onclick="d(5);"style="display:inline-block;height:100px;width:70px;border:2px solid #BBBBBB;border-radius:10px;text-align:center;background-color:#999999;">
+                    <div style="display:block;height:40px;width:40px;margin-left:15px;margin-top:15px;background-color:blue;"></div>
+                    <h2 style="margin:8px;font-family:arial;font-weight:normal" id="5">0</h2>
+                </div>
+                <div id="d6" onclick="d(6);"style="display:inline-block;height:100px;width:70px;border:2px solid #BBBBBB;border-radius:10px;text-align:center;background-color:#999999;">
+                    <div style="display:block;height:40px;width:40px;margin-left:15px;margin-top:15px;background-color:violet;"></div>
+                    <h2 style="margin:8px;font-family:arial;font-weight:normal" id="6">0</h2>
+                </div>
+                <div id="d7" onclick="d(7);"style="display:inline-block;height:100px;width:70px;border:2px solid #BBBBBB;border-radius:10px;text-align:center;background-color:#999999;">
+                    <div style="display:block;height:40px;width:40px;margin-left:15px;margin-top:15px;background-color:black;"></div>
+                    <h2 style="margin:8px;font-family:arial;font-weight:normal" id="7">0</h2>
+                </div>
+                <div id="d8" onclick="d(8);"style="display:inline-block;height:100px;width:70px;border:2px solid #BBBBBB;border-radius:10px;text-align:center;background-color:#999999;">
+                    <div style="display:block;height:40px;width:40px;margin-left:15px;margin-top:15px;background-color:grey;"></div>
+                    <h2 style="margin:8px;font-family:arial;font-weight:normal" id="8">0</h2>
+                </div>
+                <div id="d9" onclick="d(9);"style="display:inline-block;height:100px;width:70px;border:2px solid #BBBBBB;border-radius:10px;text-align:center;background-color:#999999;">
+                    <div style="display:block;height:40px;width:40px;margin-left:15px;margin-top:15px;background-color:white;"></div>
+                    <h2 style="margin:8px;font-family:arial;font-weight:normal" id="9">0</h2>
+                </div>
+            </div>
+            <button class="h" onclick="place();" style="position:absolute;right:53%;top:150px;width:200px;height:30px; background-color:orange;border:none;border-radius:5px;font-size:20px;" id="place">PLACE (0,0)</button>
+            <button class="h" onclick="gacha();" style="position:absolute;left:53%;top:150px;width:200px;height:30px; background-color:orange;border:none;border-radius:5px;font-size:20px;">GACHA</button>
+        </div>
+        <div id="gacha" style="display: none; position: absolute; top: 50px; left: 175px; width: 450px; height: 600px; background-color:#AAAAAA; border: 3px solid black; border-radius: 20px;text-align:center">
+            <h1>GACHA</h1>
+            <img id="x1" style="margin-bottom:30px;background-color:#CCCCCC;" width="400" height="200" onclick="pullless();" alt="Insert a cool gacha banner image here for 1 pull" src="doesntexist.png">
+            <img id="x2" width="400" height="200" onclick="pullmore();" alt="Insert a cool gacha banner image here for 10 pull" src="doesntexist.png" style="margin-bottom:30px;background-color:#CCCCCC;">
+            <button class="h" style="display:block;width:300px;margin-left:75px;height:30px; background-color:orange;border:none;border-radius:5px;font-size:20px;" onclick="closegacha();">CLOSE</button>
+        </div>
+        <div id="result" style="display: none; position: absolute; top: 250px; left: 200px; width: 400px; height: 200px; background-color:#AAAAAA; border: 3px solid black; border-radius: 20px;text-align:center">
+            <h1>SINGLE PULL</h1>
+            <div id="resultcolor" style="display:block;height:40px;width:40px;margin-left:180px;margin-top:15px;background-color:white;"></div>
+            <button class="h" style="display:block;width:300px;margin-left:50px;margin-top:30px;height:30px; background-color:orange;border:none;border-radius:5px;font-size:20px;" onclick="closeresult();">CLOSE</button>
+        </div>
+        <div id="result10" style="display: none; position: absolute; top: 250px; left: 200px; width: 450px; height: 200px; background-color:#AAAAAA; border: 3px solid black; border-radius: 20px;text-align:center">
+            <h1>10 PULL</h1>
+            <div id="r1" style="display:inline-block;height:40px;width:40px;margin-top:15px;background-color:white;"></div>
+            <div id="r2" style="display:inline-block;height:40px;width:40px;margin-top:15px;background-color:white;"></div>
+            <div id="r3" style="display:inline-block;height:40px;width:40px;margin-top:15px;background-color:white;"></div>
+            <div id="r4" style="display:inline-block;height:40px;width:40px;margin-top:15px;background-color:white;"></div>
+            <div id="r5" style="display:inline-block;height:40px;width:40px;margin-top:15px;background-color:white;"></div>
+            <div id="r6" style="display:inline-block;height:40px;width:40px;margin-top:15px;background-color:white;"></div>
+            <div id="r7" style="display:inline-block;height:40px;width:40px;margin-top:15px;background-color:white;"></div>
+            <div id="r8" style="display:inline-block;height:40px;width:40px;margin-top:15px;background-color:white;"></div>
+            <div id="r9" style="display:inline-block;height:40px;width:40px;margin-top:15px;background-color:white;"></div>
+            <div id="r10" style="display:inline-block;height:40px;width:40px;margin-top:15px;background-color:white;"></div>
+
+            <button class="h" style="display:block;width:300px;margin-left:75px;margin-top:30px;height:30px; background-color:orange;border:none;border-radius:5px;font-size:20px;" onclick="closeresult();">CLOSE</button>
+        </div>
+
+    </body>
+    <script>
+        let colors = ['Red',"Orange","Yellow","Green","Lime","Blue","Violet","Black","Grey","White"];
+        let a = [0,0,0,0,0,0,0,0,0,0];
+        let selx = "0"; let sely = "0"
+        let sel = 0;
+        let pulllesstimer = 0; let pullmoretimer = 0;
+        function getCursorPosition(canvas, event) {
+            const rect = canvas.getBoundingClientRect()
+            const x = event.clientX - rect.left
+            const y = event.clientY - rect.top
+            selx = Math.floor(x/10)
+            sely = Math.floor(y/10)
+            document.getElementById("place").innerHTML="PLACE (" + selx + "," + sely + ")"
+        }
+
+        const canvas = document.querySelector('canvas')
+        canvas.addEventListener('mousedown', function(e) {
+            getCursorPosition(canvas, e)
+        })
+        function d(n){
+            for(let i=0;i<=9;i++){ document.getElementById("d" + i).style.borderColor = "#BBBBBB"; }
+            document.getElementById("d" + n).style.borderColor = "#111111";
+            sel = n;
+        }
+        function place(){
+            if(a[sel]>0){
+                let c = document.getElementById("canvas");
+                let ctx = c.getContext("2d");
+                ctx.fillStyle = colors[sel];
+                ctx.fillRect(10*selx,10*sely,10,10);
+                a[sel]--;
+                update();
+            }
+        }
+        function update(){
+            for(let i=0;i<=9;i++){
+                if(a[i]==0){
+                    document.getElementById("d" + i).style.backgroundColor = "#999999"
+                }else{
+                    document.getElementById("d" + i).style.backgroundColor = "#EEEEEE"
+                }
+                document.getElementById(i).innerHTML = a[i];
+            }
+        }
+        function gacha(){
+            document.getElementById("gacha").style.display = "block";
+        }
+        function closegacha(){
+            document.getElementById("gacha").style.display = "none";
+        }
+        function closeresult(){
+            document.getElementById("result").style.display = "none";
+            document.getElementById("result10").style.display = "none";
+        }
+        function pullless(){
+            if(pulllesstimer<=0){
+                let pulled = Math.floor(Math.random()*10);
+                document.getElementById("result").style.display = "block";
+                document.getElementById("resultcolor").style.backgroundColor = colors[pulled];
+                a[pulled]++;
+                update();
+                pulllesstimer = 60;
+            }
+        }
+        function pullmore(){
+            if(pullmoretimer<=0){
+                document.getElementById("result10").style.display = "block";
+                for(let i=1;i<=10;i++){
+                    let pulled = Math.floor(Math.random()*10);
+                    document.getElementById("r" + i).style.backgroundColor = colors[pulled];
+                    a[pulled]++;
+                }
+                update();
+                pullmoretimer = 3600;
+            }
+        }
+        function tick(){
+            pulllesstimer--;
+            pullmoretimer--;
+            if(pulllesstimer<=0){
+                document.getElementById("x1").alt = "Insert a cool gacha banner image here for 1 pull"
+                document.getElementById("x1").color = "black";
+            }else{
+                document.getElementById("x1").alt = "Next single pull in " + pulllesstimer + "s"
+                document.getElementById("x1").color = "white";
+            }
+            if(pullmoretimer<=0){
+                document.getElementById("x2").alt = "Insert a cool gacha banner image here for 10 pull"
+                document.getElementById("x2").color = "black";
+            }else{
+                document.getElementById("x2").alt = "Next single pull in " + pullmoretimer + "s"
+                document.getElementById("x2").color = "white";
+            }
+        }
+        setInterval(function(){tick();},1000)
+    </script>
+</html>

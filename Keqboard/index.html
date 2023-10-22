@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <title>Keqboard</title>
+        <link rel="icon" href="ei.png">
+        <meta name="description" content="broken keqboard">
+        <link rel="stylesheet" href="main.css" type="text/css">
+        <script src="main.js"></script>
+    </head>
+    <body>
+        <span style="margin:auto;text-align:center;display:block;"><h1 style="display: inline;color:#AA66DD">KEQ</h1><h1 style="color:#8855AA;display: inline;">BOARD</h1></span>
+        <textarea oninput="calc()" type="text" id="input"></textarea>
+        <label style="padding-left:5px;color:#8833AA">Modifiers:</label>
+        <span onmouseover="tooltip(0,event)" onmouseout="tooltip(-1,event)"><input type="checkbox" id="0" onclick="calc()"></input><label style="margin-right:10px">Redoctify</label></span>
+        <span onmouseover="tooltip(1,event)" onmouseout="tooltip(-1,event)"><input type="checkbox" id="1" onclick="calc()"></input><label style="margin-right:10px">M4sterify</label></span>
+        <span onmouseover="tooltip(2,event)" onmouseout="tooltip(-1,event)"><input type="checkbox" id="2" onclick="calc()"></input><label style="margin-right:10px">Ei-ify</label></span>
+        <span onmouseover="tooltip(3,event)" onmouseout="tooltip(-1,event)"><input type="checkbox" id="3" onclick="calc()"></input><label style="margin-right:10px">Millionify</label></span>
+        <span onmouseover="tooltip(4,event)" onmouseout="tooltip(-1,event)"><input type="checkbox" id="4" onclick="calc()"></input><label style="margin-right:10px">Uwufy</label></span>
+        <span onmouseover="tooltip(5,event)" onmouseout="tooltip(-1,event)"><input type="checkbox" id="5" onclick="calc()"></input><label style="margin-right:10px">Egirlify</label></span>
+        <span onmouseover="tooltip(6,event)" onmouseout="tooltip(-1,event)"><input type="checkbox" id="6" onclick="calc()"></input><label style="margin-right:10px">Mirror Text</label></span>
+        <span onmouseover="tooltip(7,event)" onmouseout="tooltip(-1,event)"><input type="checkbox" id="7" onclick="calc()"></input><label style="margin-right:10px">Text to Binary</label></span>
+        <span onmouseover="tooltip(8,event)" onmouseout="tooltip(-1,event)"><input type="checkbox" id="8" onclick="calc()"></input><label style="margin-right:10px">Text to Non-Binary</label></span>
+        <span onmouseover="tooltip(9,event)" onmouseout="tooltip(-1,event)"><input type="checkbox" id="9" onclick="calc()"></input><label style="margin-right:10px">Message Joiner</label></span>
+        <span onmouseover="tooltip(10,event)" onmouseout="tooltip(-1,event)"><input type="checkbox" id="10" onclick="calc()"></input><label style="margin-right:10px">Randomizer</label></span>
+        <p>Hover for description. Modifiers are applied from left to right.</p>
+        <textarea disabled type="text" id="output"></textarea>
+        <div id="tooltip">
+            <p id="title" style="color:aqua"></p>
+            <p id="desc" style="color:white"></p>
+            <p id="usage" style="color:orange"></p>
+        </div>
+    </body>
+</html>

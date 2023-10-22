@@ -1,0 +1,59 @@
+@font-face {
+    font-family: Genshin;
+    src: url(../Project\ Keqei/assets/fonts/Genshin_Impact_Font.woff);
+}
+*{
+    font-family: Genshin;
+    color:white;
+}
+body{
+    background-color:black;
+    margin:0px;
+    display:flex;
+    align-items:center;
+    position: absolute;
+    top:0px; bottom:0px; left:0px; right:0px;
+}
+#ball{
+    position: relative;
+    margin: auto;
+    border-radius:50%;
+    background-color:rgba(0,0,0,0.4);
+    box-shadow: inset 0 0 30px #fff;
+    animation: spin 20s infinite linear;
+}
+#main{
+    position:relative;
+    margin:auto;
+    background-image:url(mona.jpg);
+    background-size: contain;
+}
+h1{
+    position:absolute;
+    font-size:10px; /* dummy value */
+}
+.s0,.s1,.s2,.s3,.s4{
+    position:absolute;
+    height:4px;
+    width:4px;
+    border-radius:2px;
+}
+.s0{
+    background-color: red;
+}
+.s1{
+    background-color: orange;
+}
+.s2{
+    background-color: yellow;
+}
+.s3{
+    background-color: green;
+}
+.s4{
+    background-color: blue;
+}
+@keyframes spin {
+    from {transform:rotate(0deg);}
+    to {transform:rotate(360deg);}
+}

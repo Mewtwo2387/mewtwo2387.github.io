@@ -1,0 +1,85 @@
+*{
+    font-family: Oxanium;
+}
+body{
+    background-color: black;
+}
+#mainDiv, #chatDiv{
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    right: 50px;
+    bottom: 50px;
+    background-color: rgba(0,255,255,0.3);
+    border-radius: 10px;
+}
+#loginDiv, #signupDiv, #infoDiv{
+    position: absolute;
+    top: 30px;
+    bottom: 30px;
+}
+#infoDiv{
+    width:40%;
+    left: 0px;
+    border-right: 1px solid #0aa
+}
+#loginDiv{
+    width:30%;
+    left: 40%;
+    border-left: 1px solid #0aa;
+    border-right: 1px solid #0aa
+}
+#signupDiv{
+    width:30%;
+    right: 0px;
+    border-left: 1px solid #0aa
+}
+#loginDivInner, #signupDivInner{
+    position: absoulte;
+    left:20px;
+    right:20px;
+    top:20px;
+    bottom:20px;
+}
+.mainText{
+    width: 100%;
+    position: relative;
+    left: 20px;
+    right: 20px;
+    color: #0ff;
+}
+.mainInput{
+    position: relative;
+    left: 20px;
+    right: 20px;
+    background-color: #9ff;
+    border-radius:5px;
+}
+.mainTitle{
+    text-align: center;
+    color: #0CF;
+}
+.mainButton{
+    position: relative;
+    left: 20px;
+    right: 20px;
+    background-color: #0ff;
+    border-radius:5px;
+    display:block;
+    font-size: 24px;
+}
+#chatInput{
+    background-color: #9ff;
+    display: inline-flex;
+    flex-direction: row;
+    flex-grow: 5;
+}
+#chatButton{
+    background-color: #0ff;
+    border-radius:2px;
+    display: inline-flex;
+    flex-direction: row;
+    flex-grow: 1;
+    line-height: 30px;
+    font-weight: bold;
+}

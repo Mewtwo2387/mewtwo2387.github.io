@@ -1,0 +1,61 @@
+<html>
+    <head>
+        <title id="title">C011atz</title>
+        <link rel="icon" href="ei.png">
+        <meta name="description" content="01000011 01101111 01101100 01101100 01100001 01110100 01111010 00100000 01110011 01100101 01110001 01110101 01100101 01101110 01100011 01100101 00100000 01100010 01110101 01110100 00100000 01101001 01101110 00100000 01100010 01101001 01101110 01100001 01110010 01111001">
+    </head>
+    <body>
+        <p style="display:inline">Enter the initial number</p>
+        <div id="mask" style="width:100%;height:100%;position:absolute;z-index:-1;"></div>
+        <input type="number" id="input" min="1"><button onclick="calc()">calculate</button><br>
+        <p style="display:inline">Terminate if it doesn't end after</p><input type="number" id="input2" min="0" value="1000"><p style="display:inline">iterations (0 to never terminate)</p>
+        <div id="div" style="border:2px solid black;height:500px;width:500px;position:absolute;top:50px;overflow:hidden;">
+            <canvas id="canvas" height="50000px" width="500px" style="background-color:white;display:block;"></canvas>
+        </div>
+    </body>
+</html>
+<script>
+    let y = 0;
+    let c = document.getElementById("canvas");
+    let ctx = c.getContext("2d");
+    let h=500;
+    function place(x,y,color){
+        ctx.fillStyle = color;
+        ctx.fillRect(10*x,10*y,10,10);
+    }
+    function clear(){
+        ctx.fillStyle = "white";
+        ctx.fillRect(0,0,500,500)
+        document.getElementById("mask").innerHTML = ''
+        h=500;
+        document.getElementById("div").style.height = '500px'
+    }
+    function calc(){
+        clear();
+        y = 0;
+        let num = document.getElementById("input").value;
+        let max = document.getElementById("input2").value;
+        if(max==0){max = Infinity}
+        while(num!=1 && y<max){
+            draw(num);
+            if(num%2==0){num /= 2}
+            else{num = num*3 + 1}
+        }
+    }
+    function draw(n){
+        let x = 49;
+        document.getElementById("mask").innerHTML += '<p style="top:' + (y*10 + 40) + 'px;left:510px;position:absolute;padding:0px;margin:0px;font-size:0.5    em">' + n + '</p>'
+        while(n!=0){
+            if(n%2==1){
+                place(x,y,"black")
+            }
+            n = Math.floor(n/2)
+            x--;
+        }
+        y++;
+        if(y>=50){
+            h+=10;
+            document.getElementById("div").style.height = h + 'px'
+        }
+    }
+</script>

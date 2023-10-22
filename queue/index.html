@@ -1,0 +1,175 @@
+<html>
+    <head>
+        <title>Queueing model</title>
+        <style>
+            p{ padding-left:10px; margin:0px }
+            input{ width: 100px; }
+            .customer{ width: 150px; height: 70px; border: 3px solid black; margin: 3px; display: inline-block;}
+            .queue{ overflow:scroll; height:120px; width:100%; display: block; white-space:nowrap}
+            ::-webkit-scrollbar { width: 0px; }
+            h1{ display: inline-block; }
+        </style>
+    </head>
+    <body>
+        Number of customers: <input type="number" id="C" min="1" value="10"><br>
+        Number of queues: <input type="range" id="Q" min="1" max="10" value="1"><p id="Qlabel" style="display:inline-block">1</p><br> 
+        Service time between <input type="number" id="minS" min="1" max="10" value="1"> seconds and <input type="number" id="maxS" min="1" value="10"> seconds<br>
+        Arrival interval between <input type="number" id="minA" min="1" max="10" value="1"> seconds and <input type="number" id="maxA" min="1" value="10"> seconds<br>
+        Assign Type: <button id="T">Random</button><br><br>
+        <button id="start">START</button><button id="cont" disabled="true">CONTINUE</button><button id="pause" disabled="true">PAUSE</button><button id="reset" disabled="true">RESET</button><br><br>
+        <p id="t" style="display:none">Time: 0s</p>
+        <div id="body"></div>
+    </body>
+    <script>
+        function getRandomInt(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max) + 1;
+            return Math.floor(Math.random() * (max - min) + min);
+        }
+        function assigncustomer(){
+            if(T==1){ return getRandomInt(1,Q) }
+            else{
+                var shortestQ = 0;
+                var shortestQn = 999999;
+                for(var i=1;i<=Q;i++){
+                    if(Queue[i].length<shortestQn){
+                        shortestQn = Queue[i].length;
+                        shortestQ = i;
+                    }
+                }
+                return shortestQ;
+            }
+        }
+        function tick(){
+            tickf = setInterval(function(){
+                t++; tn--;
+                document.getElementById("t").innerHTML = 'Time: ' + t + 's';
+                if(tn==0){
+                    Cq[Cn] = assigncustomer();
+                    Queue[Cq[Cn]].push(Cn);
+                    document.getElementById('q' + Cq[Cn]).innerHTML +=
+                        '<div class="customer" id="c' + Cn + '"><p><b>Customer ' + Cn + '</b></p><p id="cs' + Cn + '">Service time ' + CS[Cn] + ' sec</p><p id="ct' + Cn + '">Waited for 0 sec</p></div>'
+                    if(Cn!=C){
+                        Cn++;
+                        tn = CA[Cn];
+                    }else{
+                        tn = -1;
+                    }
+                }
+                for(var i=1;i<=Q;i++){
+                    if(Queue[i][0]!=undefined){
+                        if(QS[i]==CS[Queue[i][0]]){
+                            Cq[Queue[i][0]] = 0;
+                            document.getElementById('c' + Queue[i][0]).remove();
+                            Queue[i].shift();
+
+                            QS[i]=0;
+                        }
+                    }
+                    if(Queue[i][0]!=undefined){
+                        document.getElementById('c' + Queue[i][0]).style.backgroundColor = 'rgba(100,255,100,0.5)';
+                        QS[i]++;
+                        document.getElementById('cs' + Queue[i][0]).innerHTML = 'Service time ' + QS[i] + '/' + CS[Queue[i][0]] + ' sec';
+                    }
+                }
+                for(var i=1;i<=C;i++){
+                    if(Cq[i]!=0){
+                        Ct[i]++;
+                        document.getElementById('ct' + i).innerHTML = 'Waited for ' + Ct[i] + 'seconds';
+                    }
+                }
+            },1000);
+        }
+        var C = 10; var Q = 1; var minS = 1;     var maxS = 10;     var minA = 1;     var maxA = 10;    var T = 1;    var t = 0; var tn = 0;               var tickf;     var Cn = 0;     
+     // Customers   Queues     min Service time  max Service time   min arrival time  max arrival time  Assign Type   time       time until next customer  tick function  next customer id 
+        var CA = [0];            var CS = [0];          var Ct = [0];                       var Cq = [0];       var Queue = []; var QS = [];
+        //Customer Arrival time  Customer Service time  Customer waited for how many sec   Customer's queue no  2d queue        first customer served for x seconds
+        document.getElementById("C").oninput = function() {
+            C = this.value;
+        }
+        document.getElementById("Q").oninput = function() {
+            Qlabel.innerHTML = this.value;
+            Q = this.value;
+        }
+        document.getElementById("minS").oninput = function() {
+            document.getElementById("maxS").min = this.value;
+            minS = this.value;
+        }
+        document.getElementById("maxS").oninput = function() {
+            document.getElementById("minS").max = this.value;
+            maxS = this.value;
+        }
+        document.getElementById("minA").oninput = function() {
+            document.getElementById("maxA").min = this.value;
+            minA = this.value;
+        }
+        document.getElementById("maxA").oninput = function() {
+            document.getElementById("minA").max = this.value;
+            maxA = this.value;
+        }
+        document.getElementById("T").onclick = function() {
+            if(T==1){document.getElementById("T").innerHTML = "Shortest Queue"; T = 2;}
+            else{document.getElementById("T").innerHTML = "Random"; T = 1;}
+        }
+        document.getElementById("start").onclick = function() {
+            document.getElementById("start").disabled = true;
+            document.getElementById("pause").disabled = false;
+            document.getElementById("C").disabled = true;
+            document.getElementById("Q").disabled = true;
+            document.getElementById("minA").disabled = true;
+            document.getElementById("maxA").disabled = true;
+            document.getElementById("minS").disabled = true;
+            document.getElementById("maxS").disabled = true;
+            document.getElementById("T").disabled = true;
+            document.getElementById("t").style.display = 'block';
+            t = 0;
+            document.getElementById("t").innerHTML = 'Time: ' + t + 's';
+            CA = [0];            CS = [0];         Ct = [0];   Cq = [0];    Queue = []; QS = [0];
+            for(var i=1;i<=C;i++){
+                CA.push(getRandomInt(minA,maxA));
+                CS.push(getRandomInt(minS,maxS));
+                Ct.push(0);
+                Cq.push(0);
+            }
+            tn = CA[1];
+            Cn = 1;
+            Queue.push([]);
+            for(var i=1;i<=Q;i++){
+                document.getElementById("body").innerHTML += '<div class="queue" id="q' + i + '"><h1>QUEUE ' + i + '</h1></div>';
+                Queue.push([]);
+                QS.push(0);
+            }
+            tick();
+        }
+        document.getElementById("cont").onclick = function() {
+            document.getElementById("cont").disabled = true;
+            document.getElementById("pause").disabled = false;
+            document.getElementById("reset").disabled = true;
+            tick();
+        }
+        document.getElementById("pause").onclick = function() {
+            document.getElementById("cont").disabled = false;
+            document.getElementById("pause").disabled = true;
+            document.getElementById("reset").disabled = false;
+            clearInterval(tickf);
+        }
+        document.getElementById("reset").onclick = function() {
+            document.getElementById("start").disabled = false;
+            document.getElementById("cont").disabled = true;
+            document.getElementById("pause").disabled = true;
+            document.getElementById("reset").disabled = true;
+            document.getElementById("C").disabled = false;
+            document.getElementById("Q").disabled = false;
+            document.getElementById("minA").disabled = false;
+            document.getElementById("maxA").disabled = false;
+            document.getElementById("minS").disabled = false;
+            document.getElementById("maxS").disabled = false;
+            document.getElementById("T").disabled = false;
+            document.getElementById("t").style.display = 'none';
+            clearInterval(tickf);
+            for(var i=1;i<=Q;i++){
+                document.getElementById('q' + i).remove();
+            }
+        }
+    </script>
+</html>

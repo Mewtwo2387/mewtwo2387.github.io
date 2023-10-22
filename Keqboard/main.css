@@ -1,0 +1,38 @@
+@font-face {
+    font-family: Genshin;
+    src: url(../Project\ Keqei/assets/fonts/Genshin_Impact_Font.woff);
+}
+body{
+    background-color:#202;
+}
+label, p{  
+    font-family: Genshin;
+    color:#AA66DD;
+}
+p{
+    margin:0.5em;
+}
+input[type="checkbox"] {
+    accent-color:#8833AA
+}
+textarea{
+    height:30%;
+    width:90%;
+    margin-left:5%;
+    margin-right:5%;
+    margin-top:2%;
+    margin-bottom:2%;
+    border-radius:10px;
+    background-color:#CC88FF;
+    box-shadow:5px 5px#662299;
+    font-family: Genshin;
+    font-size:1.5em;
+
+}
+#tooltip{
+    background-color: #333;
+    box-shadow:3px 3px black;
+    border-radius:10px;
+    display:none;
+    position:absolute;
+}

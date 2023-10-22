@@ -1,0 +1,7 @@
+@font-face {
+    font-family: Genshin;
+    src: url(C:/Users/Admin/Webpages/Project\ Keqei/assets/fonts/Genshin_Impact_Font.woff);
+}
+h1,h2,h3,h4,h5,h6,label,div{
+    font-family: Genshin;
+}

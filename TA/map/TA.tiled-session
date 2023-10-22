@@ -1,0 +1,29 @@
+{
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "",
+    "expandedProjectPaths": [
+    ],
+    "exportAsImage.useCurrentScale": true,
+    "fileStates": {
+    },
+    "last.exportedFilePath": "C:/Users/Mewtw/OneDrive/圖片/pokemon-style-game-main/pokemon-style-game-main",
+    "last.imagePath": "C:/Users/Mewtw/OneDrive/桌面/Webpages/TA/map",
+    "map.height": 50,
+    "map.lastUsedExportFilter": "JavaScript map files (*.js)",
+    "map.tileHeight": 16,
+    "map.tileWidth": 16,
+    "map.width": 50,
+    "openFiles": [
+    ],
+    "project": "TA.tiled-project",
+    "recentFiles": [
+    ],
+    "tileset.lastUsedFormat": "tsx",
+    "tileset.tileSize": {
+        "height": 16,
+        "width": 16
+    }
+}

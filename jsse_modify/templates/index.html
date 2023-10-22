@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+    <head>
+        <title>QueQat</title>
+        <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='style/style_land.css')}}">
+    </head>
+    <body>
+        <div id="outer"></div>
+        <h1>QueQat</h1>
+        <img src="{{url_for('static',filename='images/meow.jpg')}}" class="meow">
+        <form action="#" method="post" onsubmit="return confirm('Are you sure you want to submit?');">
+            <p>Number of types of items buying:</p>
+            <p><input type="number" name="nm" max="30" min="0" class="mytext" required /></p>
+
+            <p>Payment method:</p>
+            <input type="radio" id="cash" name="payment" value="Cash" class="radio" required>
+            <label for="cash">Cash</label><br>
+            <input type="radio" id="card" name="payment" value="Card" class="radio" required>
+            <label for="card">Card</label><br>
+
+            <p><input type="submit" value="submit" class="submit"/></p>
+        </form>
+    </body>
+</html>

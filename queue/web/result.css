@@ -1,0 +1,18 @@
+h1 {
+  font-size: 6em; /* 40px/16=2.5em */
+  text-align: center;
+}
+
+p {
+  font-size: 40em; /* 14px/16=0.875em */
+  text-align: center;
+  margin-bottom: 0em;
+  margin-top: 0.4em;
+}
+
+.meow{
+      display: block;
+      width: 50em;
+      margin-left: auto;
+      margin-right: auto;
+}

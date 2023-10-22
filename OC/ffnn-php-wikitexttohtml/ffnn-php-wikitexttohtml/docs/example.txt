@@ -1,0 +1,54 @@
+= Wiki text to HTML =
+== Example ==
+=== Header on level 3 ===
+This is an overview of the syntax you can use with the script. Headers are defined on lines starting and ending with an equal number of equals signs as seen above.
+
+Note that special characters like &, < and > will be replaced by their HTML entities.
+
+=== Emphasizing words ===
+Emphasis on words can be added using *asterisks* which *enclose the words*.
+
+=== Wiki text styles ===
+You can use two single quotes to ''italicize'' text. Three single quotes can be used for '''boldface'''. A combination of the two both '''''italicizes and boldfaces your text'''''.
+
+Use the backtick for `typewriter text`, note that this depends heavily on browser support.
+
+=== Lists ===
+You can create ordered lists by typing a certain amount of spaces to indicate the list item level, followed by the number 1. Unordered lists are created in the same way, but use the asterisk character to denote list items. See these examples:
+
+ 1 Ordered list item one
+ 1 Item two
+  1 Sub-item 2.1
+  1 Another subitem
+ 1 Back on level one
+ 1 Fruits
+  1 Apples
+   1 Granny Smith
+   1 Golden delicious
+
+Unordered lists:
+
+   * Starting at level 3
+    * On level 4
+ * Back at level one
+  * Flexible list handling
+
+  1 Moving into a separate ordered list on level two
+ 1 Last list item
+
+Lists should be separated by at least one single line, mixing list types is currently not supported.
+
+=== Code ===
+Use three opening and closing accolades to denote *preformatted* program code:
+{{{
+This is the first line.
+Second line of program code.
+}}}
+
+=== Keystrokes and -shortcuts ===
+Use double square opening and closing brackets to indicate keystrokes like [[Ctrl + Alt + Del]] or [[Apple + W]].
+
+=== Horizontal rulers ===
+Use four dashes on a single line to add a horizontal ruler, like this:
+
+----

@@ -1,0 +1,1733 @@
+<html>
+
+<head>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="game" class="maxdisplay">
+        <div class="header">
+            <h2 style="margin:5px;">Snorlaxization 3</h2>
+            <h2 class="h2header" onclick="help();">Help</h2>
+            <h2 class="h2header" onclick="changelog();">Changelog</h2>
+            <h2 class="h2header" onclick="css();">CSS</h2>
+            <h2 class="h2header" style="font-weight:bolder">At least 1 playing</h2>
+            <h2 class="h2header" id="time">0d 00:00:00</h2>
+        </div>
+        <div class="topdisplay">
+            <div class="topitemdisplay">
+                <div class="topitemdisplayinner">
+                    <img class="img32px60" src="assets/icons/coin.png">
+                    <h1 id="moneydisplay" style="height: 40px; padding-top:10px; padding-bottom:10px; vertical-align:top;">$0</h1>
+                </div>
+                <div class="topitemdisplayinner">
+
+                </div>
+                <div class="topitemdisplayinner">
+                    <img class="img32px60" src="assets/icons/goldenfishball.png">
+                    <h1 id="goldenfishballdisplay" style="height: 40px; padding-top:10px; padding-bottom:10px; vertical-align:top;">0</h1>
+                </div>
+                <div class="topitemdisplayinner">
+                    <img class="img32px60" src="assets/icons/fatblob.png">
+                    <h1 id="fatblobdisplay" style="height: 40px; padding-top:10px; padding-bottom:10px; vertical-align:top;">0</h1>
+                </div>
+            </div>
+            <div class="topitemdisplay">
+                <p class="ps" style="font-weight: bold; font-size: 1em; margin-top: 10px;">here goes random splashes</p>
+            </div>
+        </div>
+        
+        <br>
+        <div class="maindisplay">
+            <div class="leftdisplay">
+                <div class="snorlaxdisplay">
+                    <div style="width:240px; height:60px; text-align: center;">
+                        <h1 id="kgdisplay">100</h1>   <h2>KG</h2>
+                    </div>
+                    <div style="width:240px; height:30px; margin:0; text-align: center;">
+                        <h1 id="kgpsdisplay" class="h1s">0</h1>   <h2 class="h2s">KGPS</h2>
+                    </div>
+                    <div style="width:240px; height:30px; margin:0; text-align: center;">
+                        <h1 id="mpcdisplay" class="h1s">0</h1>   <h2 class="h2s">MPC</h2>
+                    </div>
+                </div>
+
+                <br>
+                <button type="button" id="snorlax" class="snorlax-button" onclick="snorlaxclick();"></button>
+                <br>
+            </div>
+            <div id="shop" class="rightdisplay">
+                <button class="tabbutton" onclick="shop();">shop</button>
+                <button class="tabbutton" onclick="evolutionshop();">evolution shop</button>
+                <button class="tabbutton" onclick="heavenlyshop();">heavenly shop</button>
+                <button class="tabbutton" onclick="upgrade();">upgrades</button>
+                <button class="tabbutton" onclick="minecraft();">mining & crafting</button>
+                <button class="tabbutton" onclick="summoning();">summoning</button>
+                <button class="tabbutton" onclick="achi();">achievements</button>
+                <button class="tabbutton" onclick="setting();">settings</button>
+                <br>
+                <div id="fishball" class="shopitemdisplay">
+                    <img class="img32px60" src="assets/icons/food/fishball.png">
+                    <h1 class="h1s" id="fishballcountdisplay" style="height: 40px; padding-top:10px; padding-bottom:10px; vertical-align:top;">0</h2>   <h2 style="height: 40px; padding-top:10px; padding-bottom:10px; vertical-align:top;">Fishballs</h2>
+                    <button type="button" style="vertical-align: top; margin-top: 15px; margin-left: 20px;" onclick="fishballclick();">Purchase x 1</button>
+                    <div style="vertical-align: top; margin-top: 25px;" class="percentageouter">
+                        <div id="fishballpercent" class="percentageinner">
+                        </div>
+                    </div>
+                    <br>
+                    <p class="ps">Snorlax's favorite food. Eating too much fishball slowly turned him into a fishball head.</p>
+                    <br>
+                    <p id="fishballdisplay">Cost:15.000 KGPS:0.2000</p>
+                    <br>
+                    <p id="fishballdisplay2" style="margin-top:0em">Total KGPS: 0.0000 (0.0000%)</p>
+                </div>
+                
+                <br>
+
+                <div id="burger" class="shopitemdisplay">
+                    <img class="img32px60" src="assets/icons/food/burger.png">
+                    <h1 class="h1s" id="burgercountdisplay" style="height: 40px; padding-top:10px; padding-bottom:10px; vertical-align:top;">0</h2>   <h2 style="height: 40px; padding-top:10px; padding-bottom:10px; vertical-align:top;">Burgers</h2>
+                    <button type="button" style="vertical-align: top; margin-top: 15px; margin-left: 20px;" onclick="burgerclick();">Purchase x 1</button>
+                    <div style="vertical-align: top; margin-top: 25px;" class="percentageouter">
+                        <div id="burgerpercent" class="percentageinner">
+                        </div>
+                    </div>
+                    <p class="ps">Burgers are the only type of food that makes Snorlax eat vegetables... by accident</p>
+                    <br>
+                    <p id="burgerdisplay">Cost:100.00 KGPS:1.2000</p>
+                    <br>
+                    <p id="burgerdisplay2" style="margin-top:0em">Total KGPS: 0.0000 (0.0000%)</p>
+                </div>
+                <br>
+
+                <div id="restaurant" class="shopitemdisplay">
+                    <img class="img32px60" src="assets/icons/food/restaurant.png">
+                    <h1 class="h1s" id="restaurantcountdisplay" style="height: 40px; padding-top:10px; padding-bottom:10px; vertical-align:top;">0</h2>   <h2 style="height: 40px; padding-top:10px; padding-bottom:10px; vertical-align:top;">Restaurants</h2>
+                    <button type="button" style="vertical-align: top; margin-top: 15px; margin-left: 20px;" onclick="restaurantclick();">Purchase x 1</button>
+                    <div style="vertical-align: top; margin-top: 25px;" class="percentageouter">
+                        <div id="restaurantpercent" class="percentageinner">
+                        </div>
+                    </div>
+                    <p class="ps">An edible building. Why waste time to eat it's content when you can eat it as a whole?</p>
+                    <br>
+                    <p id="restaurantdisplay">Cost:2500.0 KGPS:8.0000</p>
+                    <br>
+                    <p id="restaurantdisplay2" style="margin-top:0em">Total KGPS: 0.0000 (0.0000%)</p>
+                </div>
+                <br>
+
+                <div id="factory" class="shopitemdisplay">
+                    <img class="img32px60" src="assets/icons/food/factory.png">
+                    <h1 class="h1s" id="factorycountdisplay" style="height: 40px; padding-top:10px; padding-bottom:10px; vertical-align:top;">0</h2>   <h2 style="height: 40px; padding-top:10px; padding-bottom:10px; vertical-align:top;">Factories</h2>
+                    <button type="button" style="vertical-align: top; margin-top: 15px; margin-left: 20px;" onclick="factoryclick();">Purchase x 1</button>
+                    <div style="vertical-align: top; margin-top: 25px;" class="percentageouter">
+                        <div id="factorypercent" class="percentageinner">
+                        </div>
+                    </div>
+                    <p class="ps">Restaurants aren't an option anymore when you can go straight to the source of the food and eat them all</p>
+                    <br>
+                    <p id="factorydisplay">Cost:55000 KGPS:40.000</p>
+                    <br>
+                    <p id="factorydisplay2" style="margin-top:0em">Total KGPS: 0.0000 (0.0000%)</p>
+                </div>
+                <br>
+
+                <div id="farm" class="shopitemdisplay">
+                    <img class="img32px60" src="assets/icons/food/farm.png">
+                    <h1 class="h1s" id="farmcountdisplay" style="height: 40px; padding-top:10px; padding-bottom:10px; vertical-align:top;">0</h2>   <h2 style="height: 40px; padding-top:10px; padding-bottom:10px; vertical-align:top;">Farms</h2>
+                    <button type="button" style="vertical-align: top; margin-top: 15px; margin-left: 20px;" onclick="farmclick();">Purchase x 1</button>
+                    <div style="vertical-align: top; margin-top: 25px;" class="percentageouter">
+                        <div id="farmpercent" class="percentageinner">
+                        </div>
+                    </div>
+                    <p class="ps">The ultimate food source of the food source. Those food will be raw, but do you think Snorlax will care?</p>
+                    <br>
+                    <p id="farmdisplay">Cost:850.00 K KGPS:200.00</p>
+                    <br>
+                    <p id="farmdisplay2" style="margin-top:0em">Total KGPS: 0.0000 (0.0000%)</p>
+                </div>
+                <br>
+
+                <div id="castle" class="shopitemdisplay">
+                    <img class="img32px60" src="assets/icons/food/castle.png">
+                    <h1 class="h1s" id="castlecountdisplay" style="height: 40px; padding-top:10px; padding-bottom:10px; vertical-align:top;">0</h2>   <h2 style="height: 40px; padding-top:10px; padding-bottom:10px; vertical-align:top;">Castles</h2>
+                    <button type="button" style="vertical-align: top; margin-top: 15px; margin-left: 20px;" onclick="castleclick();">Purchase x 1</button>
+                    <div style="vertical-align: top; margin-top: 25px;" class="percentageouter">
+                        <div id="castlepercent" class="percentageinner">
+                        </div>
+                    </div>
+                    <p class="ps">Food. No doubt. Peaches taste great, but most of the time they are in another castle.</p>
+                    <br>
+                    <p id="castledisplay">Cost:10.000 M KGPS:900.00</p>
+                    <br>
+                    <p id="castledisplay2" style="margin-top:0em">Total KGPS: 0.0000 (0.0000%)</p>
+                </div>
+                <br>
+
+                <div id="asteroid" class="shopitemdisplay">
+                    <img class="img32px60" src="assets/icons/food/asteroid.png">
+                    <h1 class="h1s" id="asteroidcountdisplay" style="height: 40px; padding-top:10px; padding-bottom:10px; vertical-align:top;">0</h2>   <h2 style="height: 40px; padding-top:10px; padding-bottom:10px; vertical-align:top;">Asteroids</h2>
+                    <button type="button" style="vertical-align: top; margin-top: 15px; margin-left: 20px;" onclick="asteroidclick();">Purchase x 1</button>
+                    <div style="vertical-align: top; margin-top: 25px;" class="percentageouter">
+                        <div id="asteroidpercent" class="percentageinner">
+                        </div>
+                    </div>
+                    <p class="ps">When you run out of food on Earth you gotta leave, and these potato-looking and mineral-rich objects are the best option</p>
+                    <br>
+                    <p id="asteroiddisplay">Cost:150.000 M KGPS:4440.0</p>
+                    <br>
+                    <p id="asteroiddisplay2" style="margin-top:0em">Total KGPS: 0.0000 (0.0000%)</p>
+                </div>
+                <br>
+
+                <div id="portal" class="shopitemdisplay">
+                    <img class="img32px60" src="assets/icons/food/portal.png">
+                    <h1 class="h1s" id="portalcountdisplay" style="height: 40px; padding-top:10px; padding-bottom:10px; vertical-align:top;">0</h2>   <h2 style="height: 40px; padding-top:10px; padding-bottom:10px; vertical-align:top;">Portals</h2>
+                    <button type="button" style="vertical-align: top; margin-top: 15px; margin-left: 20px;" onclick="portalclick();">Purchase x 1</button>
+                    <div style="vertical-align: top; margin-top: 25px;" class="percentageouter">
+                        <div id="portalpercent" class="percentageinner">
+                        </div>
+                    </div>
+                    <p class="ps">Portal to an Isekai with infinite food, such us our beloved emergency food Paimon. It also allows Snolax to reincarnate as a slime. With a sussy base KGPS of 177013 (Snorlax is 18+ btw)</p>
+                    <br>
+                    <p id="portaldisplay">Cost:2.8000 B KGPS:177.01 K</p>
+                    <br>
+                    <p id="portaldisplay2" style="margin-top:0em">Total KGPS: 0.0000 (0.0000%)</p>
+                </div>
+                <br>
+
+                <div id="fatconvertor" class="shopitemdisplay">
+                    <img class="img32px60" src="assets/icons/food/fatconvertor.png">
+                    <h1 class="h1s" id="fatconvertorcountdisplay" style="height: 40px; padding-top:10px; padding-bottom:10px; vertical-align:top;">0</h2>   <h2 style="height: 40px; padding-top:10px; padding-bottom:10px; vertical-align:top;">Fat Convertors</h2>
+                    <button type="button" style="vertical-align: top; margin-top: 15px; margin-left: 20px;" onclick="portalclick();">Purchase x 1</button>
+                    <div style="vertical-align: top; margin-top: 25px;" class="percentageouter">
+                        <div id="fatconvertorpercent" class="percentageinner">
+                        </div>
+                    </div>
+                    <p class="ps">Turns fat back into food, and Snorlax eats them for more fat. Science doesn't exist.</p>
+                    <br>
+                    <p id="fatconvertordisplay">Cost:44.000 B KGPS:777.00 K</p>
+                    <br>
+                    <p id="fatconvertordisplay2" style="margin-top:0em">Total KGPS: 0.0000 (0.0000%)</p>
+                </div>
+            </div>
+            <div id="evolutionshop" class="rightdisplay" style="display:none">
+                <button class="tabbutton" onclick="shop();">shop</button>
+                <button class="tabbutton" onclick="evolutionshop();">evolution shop</button>
+                <button class="tabbutton" onclick="heavenlyshop();">heavenly shop</button>
+                <button class="tabbutton" onclick="upgrade();">upgrades</button>
+                <button class="tabbutton" onclick="minecraft();">mining & crafting</button>
+                <button class="tabbutton" onclick="summoning();">summoning</button>
+                <button class="tabbutton" onclick="achi();">achievements</button>
+                <button class="tabbutton" onclick="setting();">settings</button>
+                <br>
+                <p>shop no.2 unlocked midgame, with higher tier items, similar to idle snorlax 2</p>
+            </div>
+            <div id="heavenlyshop" class="rightdisplay" style="display:none">
+                <button class="tabbutton" onclick="shop();">shop</button>
+                <button class="tabbutton" onclick="evolutionshop();">evolution shop</button>
+                <button class="tabbutton" onclick="heavenlyshop();">heavenly shop</button>
+                <button class="tabbutton" onclick="upgrade();">upgrades</button>
+                <button class="tabbutton" onclick="minecraft();">mining & crafting</button>
+                <button class="tabbutton" onclick="summoning();">summoning</button>
+                <button class="tabbutton" onclick="achi();">achievements</button>
+                <button class="tabbutton" onclick="setting();">settings</button>
+                <br>
+                <p>shop no.3 unlocked lategame, with even higher tier items, a thing that is never completed in idle snorlax 2</p>
+            </div>
+            <div id="upgrade" class="rightdisplay" style="display:none">
+                <button class="tabbutton" onclick="shop();">shop</button>
+                <button class="tabbutton" onclick="evolutionshop();">evolution shop</button>
+                <button class="tabbutton" onclick="heavenlyshop();">heavenly shop</button>
+                <button class="tabbutton" onclick="upgrade();">upgrades</button>
+                <button class="tabbutton" onclick="minecraft();">mining & crafting</button>
+                <button class="tabbutton" onclick="summoning();">summoning</button>
+                <button class="tabbutton" onclick="achi();">achievements</button>
+                <button class="tabbutton" onclick="setting();">settings</button>
+                <br>
+                <h2 class="h2s" id="upgradecountlabel">Bought/Unlocked/Total Upgrades: 0/0/26</h2>
+                <br>
+                <div id="fishball1" class="shopitemdisplay" style="display:none;">
+                    <img class="img32px60" src="assets/icons/food/fishball1.png">
+                    <h2 style="height: 40px; padding-top:10px; padding-bottom:10px; vertical-align:top;">More Fishballs</h2>
+                    <button type="button" style="vertical-align: top; margin-top: 15px; margin-left: 20px;" onclick="fishball1();">Buy</button>
+                    <br>
+                    <p style="color:limegreen; margin:0em; margin-bottom:5px;">Fishball Upgrade I</p>
+                    <br>
+                    <p class="ps">More fishballs per stick, more kgps. Doubles fishball kgps.</p>
+                    <br>
+                    <p id="fishball1display">Cost:100.00</p>
+                </div>
+                <div id="fishball2" class="shopitemdisplay" style="display:none;">
+                    <img class="img32px60" src="assets/icons/food/fishball2.png">
+                    <h2 style="height: 40px; padding-top:10px; padding-bottom:10px; vertical-align:top;">Double Fishball Bash</h2>
+                    <button type="button" style="vertical-align: top; margin-top: 15px; margin-left: 20px;" onclick="fishball2();">Buy</button>
+                    <br>
+                    <p style="color:limegreen; margin:0em; margin-bottom:5px;">Fishball Upgrade II</p>
+                    <br>
+                    <p class="ps">Twice the amount of fishballs per fishball... You know, balls are supposed to go in 2... right? Doubles fishball kgps.</p>
+                    <br>
+                    <p id="fishball2display">Cost:1000.0</p>
+                </div>
+                <div id="fishball3" class="shopitemdisplay" style="display:none;">
+                    <img class="img32px60" src="assets/icons/food/fishball3.png">
+                    <h2 style="height: 40px; padding-top:10px; padding-bottom:10px; vertical-align:top;">Fish Balls</h2>
+                    <button type="button" style="vertical-align: top; margin-top: 15px; margin-left: 20px;" onclick="fishball3();">Buy</button>
+                    <br>
+                    <p style="color:limegreen; margin:0em; margin-bottom:5px;">Fishball Upgrade III</p>
+                    <br>
+                    <p class="ps">Fishball is now actually made of fish meat. Doubles fishball kgps.</p>
+                    <br>
+                    <p id="fishball3display">Cost:10000</p>
+                </div>
+                <div id="burger1" class="shopitemdisplay" style="display:none;">
+                    <img class="img32px60" src="assets/icons/food/burger1.png">
+                    <h2 style="height: 40px; padding-top:10px; padding-bottom:10px; vertical-align:top;">Huge Mac</h2>
+                    <button type="button" style="vertical-align: top; margin-top: 15px; margin-left: 20px;" onclick="burger1();">Buy</button>
+                    <br>
+                    <p style="color:limegreen; margin:0em; margin-bottom:5px;">Burger Upgrade I</p>
+                    <br>
+                    <p class="ps">Big mac is not enough for snorlax, so you need a huge mac. Doubles burger kgps.</p>
+                    <br>
+                    <p id="burger1display">Cost:2500.0</p>
+                </div>
+                <div id="burger2" class="shopitemdisplay" style="display:none;">
+                    <img class="img32px60" src="assets/icons/food/burger2.png">
+                    <h2 style="height: 40px; padding-top:10px; padding-bottom:10px; vertical-align:top;">Cheese</h2>
+                    <button type="button" style="vertical-align: top; margin-top: 15px; margin-left: 20px;" onclick="burger2();">Buy</button>
+                    <br>
+                    <p style="color:limegreen; margin:0em; margin-bottom:5px;">Burger Upgrade II</p>
+                    <br>
+                    <p class="ps">Cheese the game. Uh yea, cheese. Doubles burger kgps.</p>
+                    <br>
+                    <p id="burger2display">Cost:25000</p>
+                </div>
+                <div id="burger3" class="shopitemdisplay" style="display:none;">
+                    <img class="img32px60" src="assets/icons/food/burger3.png">
+                    <h2 style="height: 40px; padding-top:10px; padding-bottom:10px; vertical-align:top;">Liquid Burgers</h2>
+                    <button type="button" style="vertical-align: top; margin-top: 15px; margin-left: 20px;" onclick="burger3();">Buy</button>
+                    <br>
+                    <p style="color:limegreen; margin:0em; margin-bottom:5px;">Burger Upgrade III</p>
+                    <br>
+                    <p class="ps">Liquify burgers to increase the eating speed. Don't ask me how it works, it just does. Doubles burger kgps.</p>
+                    <br>
+                    <p id="burger3display">Cost:250.00 K</p>
+                </div>
+                <div id="restaurant1" class="shopitemdisplay" style="display:none;">
+                    <img class="img32px60" src="assets/icons/food/restaurant1.png">
+                    <h2 style="height: 40px; padding-top:10px; padding-bottom:10px; vertical-align:top;">Double-story Restaurants</h2>
+                    <button type="button" style="vertical-align: top; margin-top: 15px; margin-left: 20px;" onclick="restaurant1();">Buy</button>
+                    <br>
+                    <p style="color:limegreen; margin:0em; margin-bottom:5px;">Restaurant Upgrade I</p>
+                    <br>
+                    <p class="ps">Eating restaurants are no different from eating burgers, the more layers the better. Doubles restaurant kgps.</p>
+                    <br>
+                    <p id="restaurant1display">Cost:55000</p>
+                </div>
+                <div id="restaurant2" class="shopitemdisplay" style="display:none;">
+                    <img class="img32px60" src="assets/icons/food/restaurant2.png">
+                    <h2 style="height: 40px; padding-top:10px; padding-bottom:10px; vertical-align:top;">Better Chef</h2>
+                    <button type="button" style="vertical-align: top; margin-top: 15px; margin-left: 20px;" onclick="restaurant2();">Buy</button>
+                    <br>
+                    <p style="color:limegreen; margin:0em; margin-bottom:5px;">Restaurant Upgrade II</p>
+                    <br>
+                    <p class="ps">Juicier chefs makes the difference when you eat the restaurant as a whole. Doubles restaurant kgps.</p>
+                    <br>
+                    <p id="restaurant2display">Cost:550.00 K</p>
+                </div>
+                <div id="restaurant3" class="shopitemdisplay" style="display:none;">
+                    <img class="img32px60" src="assets/icons/food/restaurant3.png">
+                    <h2 style="height: 40px; padding-top:10px; padding-bottom:10px; vertical-align:top;">Comfortable Chairs</h2>
+                    <button type="button" style="vertical-align: top; margin-top: 15px; margin-left: 20px;" onclick="restaurant3();">Buy</button>
+                    <br>
+                    <p style="color:limegreen; margin:0em; margin-bottom:5px;">Restaurant Upgrade III</p>
+                    <br>
+                    <p class="ps">Not for seating but for eating. Comfortable chairs taste more spongy. Doubles restaurant kgps.</p>
+                    <br>
+                    <p id="restaurant3display">Cost:5.5000 M</p>
+                </div>
+                <div id="factory1" class="shopitemdisplay" style="display:none;">
+                    <img class="img32px60" src="assets/icons/food/factory1.png">
+                    <h2 style="height: 40px; padding-top:10px; padding-bottom:10px; vertical-align:top;">Bonsai Pots</h2>
+                    <button type="button" style="vertical-align: top; margin-top: 15px; margin-left: 20px;" onclick="factory1();">Buy</button>
+                    <br>
+                    <p style="color:limegreen; margin:0em; margin-bottom:5px;">Factory Upgrade I</p>
+                    <br>
+                    <p class="ps">First step of automation, which allows resources to be harvested and replanted automatically. And then go straight in Snorlax's mouth. Doubles factory kgps.</p>
+                    <br>
+                    <p id="factory1display">Cost:850.00 K</p>
+                </div>
+                <div id="factory2" class="shopitemdisplay" style="display:none;">
+                    <img class="img32px60" src="assets/icons/food/factory2.png">
+                    <h2 style="height: 40px; padding-top:10px; padding-bottom:10px; vertical-align:top;">Thermal Dynamics</h2>
+                    <button type="button" style="vertical-align: top; margin-top: 15px; margin-left: 20px;" onclick="factory2();">Buy</button>
+                    <br>
+                    <p style="color:limegreen; margin:0em; margin-bottom:5px;">Factory Upgrade II</p>
+                    <br>
+                    <p class="ps">Second step of automation, which allows resources to be transported for storage or for secondary production. Or for Snorlax to eat. Doubles factory kgps.</p>
+                    <br>
+                    <p id="factory2display">Cost:8.5000 M</p>
+                </div>
+                <div id="factory3" class="shopitemdisplay" style="display:none;">
+                    <img class="img32px60" src="assets/icons/food/factory3.png">
+                    <h2 style="height: 40px; padding-top:10px; padding-bottom:10px; vertical-align:top;">Cyclic</h2>
+                    <button type="button" style="vertical-align: top; margin-top: 15px; margin-left: 20px;" onclick="factory3();">Buy</button>
+                    <br>
+                    <p style="color:limegreen; margin:0em; margin-bottom:5px;">Factory Upgrade III</p>
+                    <br>
+                    <p class="ps">More stuff. More automation. More food for snorlax to eat. And more SF4 references. Doubles factory kgps.</p>
+                    <br>
+                    <p id="factory3display">Cost:85.000 M</p>
+                </div>
+                <div id="farm1" class="shopitemdisplay" style="display:none;">
+                    <img class="img32px60" src="assets/icons/food/farm1.png">
+                    <h2 style="height: 40px; padding-top:10px; padding-bottom:10px; vertical-align:top;">Fertilizer</h2>
+                    <button type="button" style="vertical-align: top; margin-top: 15px; margin-left: 20px;" onclick="farm1();">Buy</button>
+                    <br>
+                    <p style="color:limegreen; margin:0em; margin-bottom:5px;">Farm Upgrade I</p>
+                    <br>
+                    <p class="ps">Unhealthy for Snorlax, but having megatons of fat won't be healthy anyways. But the point is, it increases the amount of food Snorlax can eat, and that's the only thing that matters. Doubles farm kgps.</p>
+                    <br>
+                    <p id="farm1display">Cost:10.000 M</p>
+                </div>
+                <div id="farm2" class="shopitemdisplay" style="display:none;">
+                    <img class="img32px60" src="assets/icons/food/farm2.png">
+                    <h2 style="height: 40px; padding-top:10px; padding-bottom:10px; vertical-align:top;">Unbreaking 255 Netherite Hoe</h2>
+                    <button type="button" style="vertical-align: top; margin-top: 15px; margin-left: 20px;" onclick="farm2();">Buy</button>
+                    <br>
+                    <p style="color:limegreen; margin:0em; margin-bottom:5px;">Farm Upgrade II</p>
+                    <br>
+                    <p class="ps">Best hoe in history (Sounds very... weird) Doubles farm kgps.</p>
+                    <br>
+                    <p id="farm2display">Cost:100.00 M</p>
+                </div>
+                <div id="farm3" class="shopitemdisplay" style="display:none;">
+                    <img class="img32px60" src="assets/icons/food/farm3.png">
+                    <h2 style="height: 40px; padding-top:10px; padding-bottom:10px; vertical-align:top;">Cyclic... Again</h2>
+                    <button type="button" style="vertical-align: top; margin-top: 15px; margin-left: 20px;" onclick="farm3();">Buy</button>
+                    <br>
+                    <p style="color:limegreen; margin:0em; margin-bottom:5px;">Farm Upgrade III</p>
+                    <br>
+                    <p class="ps">Vanilla aren't always the best flavor, and here with cyclic we can automate farming and increase the speed by a bunch. Doubles farm kgps.</p>
+                    <br>
+                    <p id="farm3display">Cost:1.0000 B</p>
+                </div>
+                <div id="castle1" class="shopitemdisplay" style="display:none;">
+                    <img class="img32px60" src="assets/icons/food/castle1.png">
+                    <h2 style="height: 40px; padding-top:10px; padding-bottom:10px; vertical-align:top;">Super Mushroom</h2>
+                    <button type="button" style="vertical-align: top; margin-top: 15px; margin-left: 20px;" onclick="castle1();">Buy</button>
+                    <br>
+                    <p style="color:limegreen; margin:0em; margin-bottom:5px;">Castle Upgrade I</p>
+                    <br>
+                    <p class="ps">Makes snorlax bigger (damn that's destructive to this planet) and now he can take an extra hit in the castle. Doubles castle kgps.</p>
+                    <br>
+                    <p id="castle1display">Cost:150.00 M</p>
+                </div>
+                <div id="castle2" class="shopitemdisplay" style="display:none;">
+                    <img class="img32px60" src="assets/icons/food/castle2.png">
+                    <h2 style="height: 40px; padding-top:10px; padding-bottom:10px; vertical-align:top;">Fire Flower</h2>
+                    <button type="button" style="vertical-align: top; margin-top: 15px; margin-left: 20px;" onclick="castle2();">Buy</button>
+                    <br>
+                    <p style="color:limegreen; margin:0em; margin-bottom:5px;">Castle Upgrade II</p>
+                    <br>
+                    <p class="ps">Now snorlax can breath fire from his extremely heated stomach, increasing his chance to survive in the castle. Doubles castle kgps.</p>
+                    <br>
+                    <p id="castle2display">Cost:1.5000 B</p>
+                </div>
+                <div id="castle3" class="shopitemdisplay" style="display:none;">
+                    <img class="img32px60" src="assets/icons/food/castle3.png">
+                    <h2 style="height: 40px; padding-top:10px; padding-bottom:10px; vertical-align:top;">Fellar Stocks</h2>
+                    <button type="button" style="vertical-align: top; margin-top: 15px; margin-left: 20px;" onclick="castle3();">Buy</button>
+                    <br>
+                    <p style="color:limegreen; margin:0em; margin-bottom:5px;">Castle Upgrade III</p>
+                    <br>
+                    <p class="ps">With this power-up snorlax can now flyyy... yea a billion tons of fat floating in the sky... but anyways it helps beating the castle. Doubles castle kgps.</p>
+                    <br>
+                    <p id="castle3display">Cost:15.000 B</p>
+                </div>
+                <div id="asteroid1" class="shopitemdisplay" style="display:none;">
+                    <img class="img32px60" src="assets/icons/food/asteroid1.png">
+                    <h2 style="height: 40px; padding-top:10px; padding-bottom:10px; vertical-align:top;">Telescope</h2>
+                    <button type="button" style="vertical-align: top; margin-top: 15px; margin-left: 20px;" onclick="asteroid1();">Buy</button>
+                    <br>
+                    <p style="color:limegreen; margin:0em; margin-bottom:5px;">Asteroid Upgrade I</p>
+                    <br>
+                    <p class="ps">With a telescope you can find more asteroids... potatoes... food... Doubles asteroid kgps.</p>
+                    <br>
+                    <p id="asteroid1display">Cost:2.8000 B</p>
+                </div>
+                <div id="asteroid2" class="shopitemdisplay" style="display:none;">
+                    <img class="img32px60" src="assets/icons/food/asteroid2.png">
+                    <h2 style="height: 40px; padding-top:10px; padding-bottom:10px; vertical-align:top;">Gravitational Force</h2>
+                    <button type="button" style="vertical-align: top; margin-top: 15px; margin-left: 20px;" onclick="asteroid2();">Buy</button>
+                    <br>
+                    <p style="color:limegreen; margin:0em; margin-bottom:5px;">Asteroid Upgrade II</p>
+                    <br>
+                    <p class="ps">Use Snorlax's weight to create a gravitational force to attract asteroids (Well they are probably meteors by then). Doubles asteroid kgps.</p>
+                    <br>
+                    <p id="asteroid2display">Cost:28.000 B</p>
+                </div>
+                <div id="asteroid3" class="shopitemdisplay" style="display:none;">
+                    <img class="img32px60" src="assets/icons/food/asteroid3.png">
+                    <h2 style="height: 40px; padding-top:10px; padding-bottom:10px; vertical-align:top;">Colored Glasses</h2>
+                    <button type="button" style="vertical-align: top; margin-top: 15px; margin-left: 20px;" onclick="asteroid3();">Buy</button>
+                    <br>
+                    <p style="color:limegreen; margin:0em; margin-bottom:5px;">Asteroid Upgrade III</p>
+                    <br>
+                    <p class="ps">The colored glass pane makes the asteroids look more like potatoes, effectively increasing the eating speed. Doubles asteroid kgps.</p>
+                    <br>
+                    <p id="asteroid3display">Cost:280.00 B</p>
+                </div>
+                <div id="portal1" class="shopitemdisplay" style="display:none;">
+                    <img class="img32px60" src="assets/icons/food/portal1.png">
+                    <h2 style="height: 40px; padding-top:10px; padding-bottom:10px; vertical-align:top;">Freemogems</h2>
+                    <button type="button" style="vertical-align: top; margin-top: 15px; margin-left: 20px;" onclick="portal1();">Buy</button>
+                    <br>
+                    <p style="color:limegreen; margin:0em; margin-bottom:5px;">Portal Upgrade I</p>
+                    <br>
+                    <p class="ps">Oh new redeem code! Wait... We spent 88 billion on this upgrade... That's a lot of primogems. So lets triples portal kgps instead of double.</p>
+                    <br>
+                    <p id="portal1display">Cost:88.000 B</p>
+                </div>
+                <div id="portal2" class="shopitemdisplay" style="display:none;">
+                    <img class="img32px60" src="assets/icons/food/portal2.png">
+                    <h2 style="height: 40px; padding-top:10px; padding-bottom:10px; vertical-align:top;">Simping</h2>
+                    <button type="button" style="vertical-align: top; margin-top: 15px; margin-left: 20px;" onclick="portal2();">Buy</button>
+                    <br>
+                    <p style="color:limegreen; margin:0em; margin-bottom:5px;">Portal Upgrade II</p>
+                    <br>
+                    <p class="ps">Imagine life without simping for waifus. Simping effectively increases enjoyment on the other sidee of the portal, and also allowing Snorlax to correctly choose characters based on look (and boing boings) instead of stats which are just useless numbers. And learn to watch r34. Well that triples portal kgps.</p>
+                    <br>
+                    <p id="portal2display">Cost:888.00 B</p>
+                </div>
+                <div id="fatconvertor1" class="shopitemdisplay" style="display:none;">
+                    <img class="img32px60" src="assets/icons/food/fatconvertor1.png">
+                    <h2 style="height: 40px; padding-top:10px; padding-bottom:10px; vertical-align:top;">Bit Flip</h2>
+                    <button type="button" style="vertical-align: top; margin-top: 15px; margin-left: 20px;" onclick="fatconvertor1();">Buy</button>
+                    <br>
+                    <p style="color:limegreen; margin:0em; margin-bottom:5px;">Fat Convertor Upgrade I</p>
+                    <br>
+                    <p class="ps">Flip a single bit of the world's code developed by God, from 10 to 11, such that E is now mc^3 instead of mc^2, increasing convertion rates. Doubles fat convertor kgps.</p>
+                    <br>
+                    <p id="fatconvertor1display">Cost:660.00 B</p>
+                </div>
+                <div id="fatconvertor2" class="shopitemdisplay" style="display:none;">
+                    <img class="img32px60" src="assets/icons/food/fatconvertor2.png">
+                    <h2 style="height: 40px; padding-top:10px; padding-bottom:10px; vertical-align:top;">Pumping System</h2>
+                    <button type="button" style="vertical-align: top; margin-top: 15px; margin-left: 20px;" onclick="fatconvertor2();">Buy</button>
+                    <br>
+                    <p style="color:limegreen; margin:0em; margin-bottom:5px;">Fat Convertor Upgrade II</p>
+                    <br>
+                    <p class="ps">Fat is now automatically pumped out of Snorlax, do the convertion and pumped beack in Snorlax's stomach. Doubles fat convertor kgps.</p>
+                    <br>
+                    <p id="fatconvertor2display">Cost:6.6000 T</p>
+                </div>
+                <div id="fatconvertor3" class="shopitemdisplay" style="display:none;">
+                    <img class="img32px60" src="assets/icons/food/fatconvertor3.png">
+                    <h2 style="height: 140px; width:700px; padding-top:10px; padding-bottom:10px; vertical-align:top;">This is my game, so I don't have to set limits to myself, and there are no limits to how long upgrade names can be, as titles automatically get to the second row by default if it's too long. As I made 3 of each basic shop item upgrade (except portal with 2), this is the final upgrade out of the 26. So let's make the name as long as possible. Names does not necessarily relate to the shop item anyways.</h2>
+                    <button type="button" style="vertical-align: top; margin-top: 15px; margin-left: 20px;" onclick="fatconvertor3();">Buy</button>
+                    <br>
+                    <p style="color:limegreen; margin:0em; margin-bottom:5px;">Fat Convertor Upgrade III</p>
+                    <br>
+                    <p class="ps">Well everything is in the title. Doubles fat convertor kgps.</p>
+                    <br>
+                    <p id="fatconvertor3display">Cost:66.000 T</p>
+                </div>
+            </div>
+            <div id="minecraft" class="rightdisplay" style="display:none">
+                <button class="tabbutton" onclick="shop();">shop</button>
+                <button class="tabbutton" onclick="evolutionshop();">evolution shop</button>
+                <button class="tabbutton" onclick="heavenlyshop();">heavenly shop</button>
+                <button class="tabbutton" onclick="upgrade();">upgrades</button>
+                <button class="tabbutton" onclick="minecraft();">mining & crafting</button>
+                <button class="tabbutton" onclick="summoning();">summoning</button>
+                <button class="tabbutton" onclick="achi();">achievements</button>
+                <button class="tabbutton" onclick="setting();">settings</button>
+                <br>
+                <p>mining minigame + crafting items to boost kgps and mpc</p>
+            </div>
+            <div id="summoning" class="rightdisplay" style="display:none">
+                <button class="tabbutton" onclick="shop();">shop</button>
+                <button class="tabbutton" onclick="evolutionshop();">evolution shop</button>
+                <button class="tabbutton" onclick="heavenlyshop();">heavenly shop</button>
+                <button class="tabbutton" onclick="upgrade();">upgrades</button>
+                <button class="tabbutton" onclick="minecraft();">mining & crafting</button>
+                <button class="tabbutton" onclick="summoning();">summoning</button>
+                <button class="tabbutton" onclick="achi();">achievements</button>
+                <button class="tabbutton" onclick="setting();">settings</button>
+                <br>
+                <p>here you summon stuff to boost stuff, get your primogems ready</p>
+            </div>
+            <div id="achi" class="rightdisplay" style="display:none">
+                <button class="tabbutton" onclick="shop();">shop</button>
+                <button class="tabbutton" onclick="evolutionshop();">evolution shop</button>
+                <button class="tabbutton" onclick="heavenlyshop();">heavenly shop</button>
+                <button class="tabbutton" onclick="upgrade();">upgrades</button>
+                <button class="tabbutton" onclick="minecraft();">mining & crafting</button>
+                <button class="tabbutton" onclick="summoning();">summoning</button>
+                <button class="tabbutton" onclick="achi();">achievements</button>
+                <button class="tabbutton" onclick="setting();">settings</button>
+                <br>
+                <h2 class="h2s" id="achicountlabel">Unlocked/Total Achievements: 0/27</h2>
+                <br>
+                <div id="fishballa1" class="shopitemdisplay" style="display:none;">
+                    <img class="img32px60" src="assets/icons/food/fishballa1.png">
+                    <h2 style="height: 40px; padding-top:10px; padding-bottom:10px; vertical-align:top;">Gotta start eating somewhere</h2>
+                    <br>
+                    <p class="ps">Obtain 1 fishball</p>
+                    <br>
+                    <p class="ps" style="font-weight: bold;">Unlocks Upgrade: </p>
+                    <p class="ps" style="font-weight: bolder; color:lightgrey">More Fishballs</p>
+                </div>
+                <div id="fishballa2" class="shopitemdisplay" style="display:none;">
+                    <img class="img32px60" src="assets/icons/food/fishballa2.png">
+                    <h2 style="height: 40px; padding-top:10px; padding-bottom:10px; vertical-align:top;">I wish for infinite food</h2>
+                    <br>
+                    <p class="ps">Obtain 7 fishballs</p>
+                    <br>
+                    <p class="ps" style="font-weight: bold;">Unlocks Upgrade: </p>
+                    <p class="ps" style="font-weight: bolder; color:lightgrey">Double Fishball Bash</p>
+                </div>
+                <div id="fishballa3" class="shopitemdisplay" style="display:none;">
+                    <img class="img32px60" src="assets/icons/food/fishballa3.png">
+                    <h2 style="height: 40px; padding-top:10px; padding-bottom:10px; vertical-align:top;">Now that's... a snorlax spoon of fishballs</h2>
+                    <br>
+                    <p class="ps">Obtain 25 fishballs</p>
+                    <br>
+                    <p class="ps" style="font-weight: bold;">Unlocks Upgrade: </p>
+                    <p class="ps" style="font-weight: bolder; color:lightgrey">Fish Balls</p>
+                </div>
+                <div id="burgera1" class="shopitemdisplay" style="display:none;">
+                    <img class="img32px60" src="assets/icons/food/burgera1.png">
+                    <h2 style="height: 40px; padding-top:10px; padding-bottom:10px; vertical-align:top;">Slightly better food</h2>
+                    <br>
+                    <p class="ps">Obtain 1 burger</p>
+                    <br>
+                    <p class="ps" style="font-weight: bold;">Unlocks Upgrade: </p>
+                    <p class="ps" style="font-weight: bolder; color:lightgrey">Huge Mac</p>
+                </div>
+                <div id="burgera2" class="shopitemdisplay" style="display:none;">
+                    <img class="img32px60" src="assets/icons/food/burgera2.png">
+                    <h2 style="height: 40px; padding-top:10px; padding-bottom:10px; vertical-align:top;">Tiny Snorlax meal</h2>
+                    <br>
+                    <p class="ps">Obtain 10 burgers</p>
+                    <br>
+                    <p class="ps" style="font-weight: bold;">Unlocks Upgrade: </p>
+                    <p class="ps" style="font-weight: bolder; color:lightgrey">Cheese</p>
+                </div>
+                <div id="burgera3" class="shopitemdisplay" style="display:none;">
+                    <img class="img32px60" src="assets/icons/food/burgera3.png">
+                    <h2 style="height: 40px; padding-top:10px; padding-bottom:10px; vertical-align:top;">To the ceiling</h2>
+                    <br>
+                    <p class="ps">Obtain 25 burgers</p>
+                    <br>
+                    <p class="ps" style="font-weight: bold;">Unlocks Upgrade: </p>
+                    <p class="ps" style="font-weight: bolder; color:lightgrey">Liquid Burgers</p>
+                </div>
+                <div id="restauranta1" class="shopitemdisplay" style="display:none;">
+                    <img class="img32px60" src="assets/icons/food/restauranta1.png">
+                    <h2 style="height: 40px; padding-top:10px; padding-bottom:10px; vertical-align:top;">The edible building</h2>
+                    <br>
+                    <p class="ps">Obtain 1 restaurant</p>
+                    <br>
+                    <p class="ps" style="font-weight: bold;">Unlocks Upgrade: </p>
+                    <p class="ps" style="font-weight: bolder; color:lightgrey">Double-story Restaurants</p>
+                </div>
+                <div id="restauranta2" class="shopitemdisplay" style="display:none;">
+                    <img class="img32px60" src="assets/icons/food/restauranta2.png">
+                    <h2 style="height: 40px; padding-top:10px; padding-bottom:10px; vertical-align:top;">Street of edible buildings</h2>
+                    <br>
+                    <p class="ps">Obtain 10 restaurant</p>
+                    <br>
+                    <p class="ps" style="font-weight: bold;">Unlocks Upgrade: </p>
+                    <p class="ps" style="font-weight: bolder; color:lightgrey">Better Chef</p>
+                </div>
+                <div id="restauranta3" class="shopitemdisplay" style="display:none;">
+                    <img class="img32px60" src="assets/icons/food/restauranta3.png">
+                    <h2 style="height: 40px; padding-top:10px; padding-bottom:10px; vertical-align:top;">Road of edible buildings</h2>
+                    <br>
+                    <p class="ps">Obtain 25 restaurant</p>
+                    <br>
+                    <p class="ps" style="font-weight: bold;">Unlocks Upgrade: </p>
+                    <p class="ps" style="font-weight: bolder; color:lightgrey">Comfortable Chairs</p>
+                </div>
+                <div id="factorya1" class="shopitemdisplay" style="display:none;">
+                    <img class="img32px60" src="assets/icons/food/factorya1.png">
+                    <h2 style="height: 40px; padding-top:10px; padding-bottom:10px; vertical-align:top;">Loading 220 mods...</h2>
+                    <br>
+                    <p class="ps">Obtain 1 factory</p>
+                    <br>
+                    <p class="ps" style="font-weight: bold;">Unlocks Upgrade: </p>
+                    <p class="ps" style="font-weight: bolder; color:lightgrey">Bonsai Pots</p>
+                </div>
+                <div id="factorya2" class="shopitemdisplay" style="display:none;">
+                    <img class="img32px60" src="assets/icons/food/factorya2.png">
+                    <h2 style="height: 40px; padding-top:10px; padding-bottom:10px; vertical-align:top;">One achievemnt page down</h2>
+                    <br>
+                    <p class="ps">Obtain 10 factories</p>
+                    <br>
+                    <p class="ps" style="font-weight: bold;">Unlocks Upgrade: </p>
+                    <p class="ps" style="font-weight: bolder; color:lightgrey">Thermal Dynamics</p>
+                </div>
+                <div id="factorya3" class="shopitemdisplay" style="display:none;">
+                    <img class="img32px60" src="assets/icons/food/factorya3.png">
+                    <h2 style="height: 40px; padding-top:10px; padding-bottom:10px; vertical-align:top;">Factory: Automata</h2>
+                    <br>
+                    <p class="ps">Obtain 25 factories</p>
+                    <br>
+                    <p class="ps" style="font-weight: bold;">Unlocks Upgrade: </p>
+                    <p class="ps" style="font-weight: bolder; color:lightgrey">Cyclic</p>
+                </div>
+                <div id="farma1" class="shopitemdisplay" style="display:none;">
+                    <img class="img32px60" src="assets/icons/food/farma1.png">
+                    <h2 style="height: 40px; padding-top:10px; padding-bottom:10px; vertical-align:top;">Achievement Unlocked: [Time to Farm!]</h2>
+                    <br>
+                    <p class="ps">Obtain 1 farm</p>
+                    <br>
+                    <p class="ps" style="font-weight: bold;">Unlocks Upgrade: </p>
+                    <p class="ps" style="font-weight: bolder; color:lightgrey">Fertilizer</p>
+                </div>
+                <div id="farma2" class="shopitemdisplay" style="display:none;">
+                    <img class="img32px60" src="assets/icons/food/farma2.png">
+                    <h2 style="height: 40px; padding-top:10px; padding-bottom:10px; vertical-align:top;">3x3 farm</h2>
+                    <br>
+                    <p class="ps">Obtain 9 farms</p>
+                    <br>
+                    <p class="ps" style="font-weight: bold;">Unlocks Upgrade: </p>
+                    <p class="ps" style="font-weight: bolder; color:lightgrey">Unbreaking 255 Netherite Hoe</p>
+                </div>
+                <div id="farma3" class="shopitemdisplay" style="display:none;">
+                    <img class="img32px60" src="assets/icons/food/farma3.png">
+                    <h2 style="height: 40px; padding-top:10px; padding-bottom:10px; vertical-align:top;">5x5 farm</h2>
+                    <br>
+                    <p class="ps">Obtain 25 farms</p>
+                    <br>
+                    <p class="ps" style="font-weight: bold;">Unlocks Upgrade: </p>
+                    <p class="ps" style="font-weight: bolder; color:lightgrey">Cyclic... Again</p>
+                </div>
+                <div id="castlea1" class="shopitemdisplay" style="display:none;">
+                    <img class="img32px60" src="assets/icons/food/castlea1.png">
+                    <h2 style="height: 40px; padding-top:10px; padding-bottom:10px; vertical-align:top;">Thank you snorlax! But that juicy peach is in another castle!</h2>
+                    <br>
+                    <p class="ps">Obtain 1 castle</p>
+                    <br>
+                    <p class="ps" style="font-weight: bold;">Unlocks Upgrade: </p>
+                    <p class="ps" style="font-weight: bolder; color:lightgrey">Super Mushroom</p>
+                </div>
+                <div id="castlea2" class="shopitemdisplay" style="display:none;">
+                    <img class="img32px60" src="assets/icons/food/castlea2.png">
+                    <h2 style="height: 40px; padding-top:10px; padding-bottom:10px; vertical-align:top;">Bowser's castle</h2>
+                    <br>
+                    <p class="ps">Obtain 8 castles</p>
+                    <br>
+                    <p class="ps" style="font-weight: bold;">Unlocks Upgrade: </p>
+                    <p class="ps" style="font-weight: bolder; color:lightgrey">Fire Flower</p>
+                </div>
+                <div id="castlea3" class="shopitemdisplay" style="display:none;">
+                    <img class="img32px60" src="assets/icons/food/castlea3.png">
+                    <h2 style="height: 40px; padding-top:10px; padding-bottom:10px; vertical-align:top;">World 25, where the hell are we going</h2>
+                    <br>
+                    <p class="ps">Obtain 25 castles</p>
+                    <br>
+                    <p class="ps" style="font-weight: bold;">Unlocks Upgrade: </p>
+                    <p class="ps" style="font-weight: bolder; color:lightgrey">Fellar Stocks</p>
+                </div>
+                <div id="asterioda1" class="shopitemdisplay" style="display:none;">
+                    <img class="img32px60" src="assets/icons/food/asterioda1.png">
+                    <h2 style="height: 40px; padding-top:10px; padding-bottom:10px; vertical-align:top;">Dinosaur: Wow that's a bright star</h2>
+                    <br>
+                    <p class="ps">Obtain 1 asteroid</p>
+                    <br>
+                    <p class="ps" style="font-weight: bold;">Unlocks Upgrade: </p>
+                    <p class="ps" style="font-weight: bolder; color:lightgrey">Telescope</p>
+                </div>
+                <div id="asteroida2" class="shopitemdisplay" style="display:none;">
+                    <img class="img32px60" src="assets/icons/food/asterioda2.png">
+                    <h2 style="height: 40px; padding-top:10px; padding-bottom:10px; vertical-align:top;">Kirby: Asteriod Allies</h2>
+                    <br>
+                    <p class="ps">Obtain 8 asteroids</p>
+                    <br>
+                    <p class="ps" style="font-weight: bold;">Unlocks Upgrade: </p>
+                    <p class="ps" style="font-weight: bolder; color:lightgrey">Gravitational Force</p>
+                </div>
+                <div id="asteroida3" class="shopitemdisplay" style="display:none;">
+                    <img class="img32px60" src="assets/icons/food/asterioda3.png">
+                    <h2 style="height: 40px; padding-top:10px; padding-bottom:10px; vertical-align:top;">Uranus (No joke here) moons</h2>
+                    <br>
+                    <p class="ps">Obtain 27 asteroids</p>
+                    <br>
+                    <p class="ps" style="font-weight: bold;">Unlocks Upgrade: </p>
+                    <p class="ps" style="font-weight: bolder; color:lightgrey">Colored Glasses</p>
+                </div>
+                <div id="portala1" class="shopitemdisplay" style="display:none;">
+                    <img class="img32px60" src="assets/icons/food/portala1.png">
+                    <h2 style="height: 40px; padding-top:10px; padding-bottom:10px; vertical-align:top;">That time i reincarnated as an anemo slime</h2>
+                    <br>
+                    <p class="ps">Obtain 1 portal</p>
+                    <br>
+                    <p class="ps" style="font-weight: bold;">Unlocks Tab: </p>
+                    <p class="ps" style="font-weight: bolder; color:lightgrey">Summoning</p>
+                </div>
+                <div id="portala2" class="shopitemdisplay" style="display:none;">
+                    <img class="img32px60" src="assets/icons/food/portala2.png">
+                    <h2 style="height: 40px; padding-top:10px; padding-bottom:10px; vertical-align:top;">Portal of the seven</h2>
+                    <br>
+                    <p class="ps">Obtain 7 portals</p>
+                    <br>
+                    <p class="ps" style="font-weight: bold;">Unlocks Upgrade: </p>
+                    <p class="ps" style="font-weight: bolder; color:lightgrey">Freemogemes</p>
+                </div>
+                <div id="portala3" class="shopitemdisplay" style="display:none;">
+                    <img class="img32px60" src="assets/icons/food/portala3.png">
+                    <h2 style="height: 40px; padding-top:10px; padding-bottom:10px; vertical-align:top;">Adventure rank 25</h2>
+                    <br>
+                    <p class="ps">Obtain 25 portals</p>
+                    <br>
+                    <p class="ps" style="font-weight: bold;">Unlocks Upgrade: </p>
+                    <p class="ps" style="font-weight: bolder; color:lightgrey">Simping</p>
+                </div>
+                <div id="fatconvertora1" class="shopitemdisplay" style="display:none;">
+                    <img class="img32px60" src="assets/icons/food/fatconvertora1.png">
+                    <h2 style="height: 40px; padding-top:10px; padding-bottom:10px; vertical-align:top;">Our logicn't: e=mc^2,c=me^2,e=m^3e^4</h2>
+                    <br>
+                    <p class="ps">Obtain 1 fat convertor</p>
+                    <br>
+                    <p class="ps" style="font-weight: bold;">Unlocks Upgrade: </p>
+                    <p class="ps" style="font-weight: bolder; color:lightgrey">Bit Flip</p>
+                </div>
+                <div id="fatconvertora2" class="shopitemdisplay" style="display:none;">
+                    <img class="img32px60" src="assets/icons/food/fatconvertora2.png">
+                    <h2 style="height: 40px; padding-top:10px; padding-bottom:10px; vertical-align:top;">Scientists fainted</h2>
+                    <br>
+                    <p class="ps">Obtain 10 fat convertors</p>
+                    <br>
+                    <p class="ps" style="font-weight: bold;">Unlocks Upgrade: </p>
+                    <p class="ps" style="font-weight: bolder; color:lightgrey">Pumping System</p>
+                </div>
+                <div id="fatconvertora3" class="shopitemdisplay" style="display:none;">
+                    <img class="img32px60" src="assets/icons/food/fatconvertora3.png">
+                    <h2 style="height: 40px; padding-top:10px; padding-bottom:10px; vertical-align:top;">This unlocks... WHAT???</h2>
+                    <br>
+                    <p class="ps">Obtain 25 fat convertors</p>
+                    <br>
+                    <p class="ps" style="font-weight: bold;">Unlocks Upgrade: </p>
+                    <p class="ps" style="font-weight: bolder; color:lightgrey">This is my game, so I don't have to set limits to myself, and there are no limits to how long upgrade names can be, as titles automatically get to the second row by default if it's too long. As I made 3 of each basic shop item upgrade (except portal with 2), this is the final upgrade out of the 26. So let's make the name as long as possible. Names does not necessarily relate to the shop item anyways.</p>
+                </div>
+            </div>
+            <div id="setting" class="rightdisplay" style="display:none">
+                <button class="tabbutton" onclick="shop();">shop</button>
+                <button class="tabbutton" onclick="evolutionshop();">evolution shop</button>
+                <button class="tabbutton" onclick="heavenlyshop();">heavenly shop</button>
+                <button class="tabbutton" onclick="upgrade();">upgrades</button>
+                <button class="tabbutton" onclick="minecraft();">mining & crafting</button>
+                <button class="tabbutton" onclick="summoning();">summoning</button>
+                <button class="tabbutton" onclick="achi();">achievements</button>
+                <button class="tabbutton" onclick="setting();">settings</button>
+                <br>
+                <p>here goes settings, but you currently have no choices *communism intensifies*</p>
+            </div>
+        </div>
+    </div>
+    <div id="css" class="maxdisplay" style="display:none;">
+        <h2 class="h2header" style="margin:0em;" onclick="backtogame();">Back to game</h2>
+        <br>
+        <h1 style="margin:30px;">h1</h1><h1 class="h1s" style="margin:10px;">h1s</h1>
+        <br>
+        <h2 class="h2header" style="margin:30px;">h2header</h2>
+        <br>
+        <h2 style="margin:30px;">h2</h2><h2 class="h2s" style="margin:10px;">h2s</h2>
+        <br>
+        <p style="margin:30px;">p</p><p class="ps" style="margin:10px;">ps</p>
+        <br>
+        <img class="img32px60" style="border:2px solid lightskyblue;" src="assets/main/borderedsnorlax.png">
+    </div>
+    <div id="changelog" class="maxdisplay" style="display:none;">
+        <h2 class="h2header" style="margin:0em;" onclick="backtogame();">Back to game</h2>
+        <br>
+        alpha 1.0.1 
+        Changes
+        upgrades & achievements
+        - They are now stored in variables with an ID, so getting the same upgrade/achievement twice or buying an upgrade before it unlocks is no longer possible... well unless you change the variables in console, but what's the point when you can already give yourself a centillion coins there
+        - Capitalization is now consistent
+        Added |number| new assets
+        - Missing shop item assets are now Added
+        Fixes
+        001 Upgrade and achievements name capitalization is very random
+        002 Purchasing upgrades does not update upgrade count 
+        003 Obtained achievements can be obtained again if the number of that food remains the same as the achievemnet requirement amount when purchasing upgrade of that kind
+        
+        alpha 1.0.0 20210816 1642+158
+        Well now that the game is a game, imma add a changelog to feel a bit professional, although no one will play this game
+        Additions
+        Introduced changelog
+        - this.
+        - too lazy to format, this is a mess when viewed ingame
+        Introduced 26 upgrades
+        - 3 upgrades for each basic shop item have been added. The cost of upgrade I of a shop item is equvalent to the cost of the next shop item, upgrade II costing x10 more, and upgrade III costing x100 more. All upgrades double kgps for that specific food item.
+        - There's only 2 portal upgrades, but they cost double and gives triple kgps instead of double, to emphasize how great simping and freemogems are.
+        - Fat convertor does not have a next shop item, so 660B is used.
+        - Every title of the upgrades are within 1-4 words, except that fat convertor upgrade III is 81 words long.
+        Introduced 27 achievements
+        - 3 achievements for each basic shop have been added. Each achievement unlocks a corresponding upgrade.
+        - Portal achievement I unlocks summoning (TBA), achievement II and III unlocks upgrade I and II.
+        - Achievement I,II,III unlocks when bought 1,10,25 of that shop item respectively, but some values are changed to suit with the achievement name
+        Changes
+        - wormholes are now called portals, I mistype wormholes as portals 100% of the time so fuck it i find and replace all wormholes to portals
+    </div>
+    <div id="help" class="maxdisplay" style="display:none;">
+        <h2 class="h2header" style="margin:0em;" onclick="backtogame();">Back to game</h2>
+        <br>
+        here goes help
+    </div>
+</body>
+
+<script>
+    var i = 0;
+    var d = 0; var h = 0; var m = 0; var s = 0;
+    var kg = 100; var kgps = 0; var mpc = 1; var money = 0; var mpcpkg = 0.01; var kgpsmulti = 1;
+    var goldenfishballcount = 0; var fatblobcount = 0;
+
+    var fishballcount = 0;      var fishballkgps = 0.2;         var fishballcost = 15;
+    var burgercount = 0;        var burgerkgps = 1.2;           var burgercost = 100;
+    var restaurantcount = 0;    var restaurantkgps = 8;         var restaurantcost = 2500;
+    var factorycount = 0;       var factorykgps = 40;           var factorycost = 55000;
+    var farmcount = 0;          var farmkgps = 200;             var farmcost = 850000;
+    var castlecount = 0;        var castlekgps = 900;           var castlecost = 10000000;
+    var asteroidcount = 0;      var asteroidkgps = 4440;        var asteroidcost = 150000000;
+    var portalcount = 0;      var portalkgps = 177013;      var portalcost = 2800000000;
+    var fatconvertorcount = 0;  var fatconvertorkgps = 777000;  var fatconvertorcost = 44000000000;
+
+    var achicount = 0; var totalachi = 27; let achilist = [];
+    var upgradecount = 0; var unlockedupgrade = 0; var totalupgrade = 26; let upgradelist = [];
+    for (i = 0; i < 100; i++){
+        achilist.push(0);
+        upgradelist.push(0);
+    }
+    let splash = ["Runs at an extremely high fps of 1!","So where is snorlax clicker 1 and 2?","css sucks","feels good to randomly throw in a css sucks in here","Gotta find all 7 fishballs!"]
+    function numtotext(num){
+        let suffix = ['K','M','B','T','Qa','Qi','Sx','Sp','Oc','No','De','UD','DD','TD','QaD','QiD','SxD','SpD','OcD','NoD','Vi','UV','DV','TV','QaV','QiV','SxV','SpV','OcV','NoV','Tg']
+        num = num.toPrecision(5);
+        if (num>100000){
+            var digits = Math.ceil(Math.log(num)/Math.log(10));
+            num = num/(10**digits)
+            if(digits%3 == 0){
+                num *= 1000;
+                num = num.toPrecision(5);
+                return num + " " + suffix[Math.floor((digits - 1)/3) - 1];
+            }
+            if(digits%3 == 1){
+                num *= 10;
+                num = num.toPrecision(5);
+                return num + " " + suffix[Math.floor((digits - 1)/3) - 1];
+            }
+            if(digits%3 == 2){
+                num *= 100;
+                num = num.toPrecision(5);
+                return num + " " + suffix[Math.floor((digits - 1)/3) - 1];
+            }
+        }else{
+            return num;
+        }
+    }
+    function dd(num){
+        if(num<10){
+            return "0" + num;
+        }else{
+            return num;
+        }
+
+    }
+    function tick(){
+        setInterval(function(){ 
+            kg += kgps; 
+            kgchange();
+            s++;
+            if(s==60){
+                m++;
+                s = 0;
+                if(m==60){
+                    h++;
+                    m = 0;
+                    if(h==24){
+                        d++;
+                        h = 0;
+                    }
+                }
+            }
+            document.getElementById("time").innerHTML = d + "d " + dd(h) + ":" + dd(m) + ":" + dd(s);
+        }, 1000);
+    }
+    tick();
+    function snorlaxclick(){
+        money += mpc;
+        snorlaxanimation();
+        moneychange();
+    }
+    function fishballclick(){
+        if(fishballcost<=money){
+            money -= fishballcost;
+            fishballcount++;
+            fishballcost *= 1.2;
+            moneychange();
+            fishballchange();
+        }
+    }
+    function burgerclick(){
+        if(burgercost<=money){
+            money -= burgercost;
+            burgercount++;
+            burgercost *= 1.2;
+            moneychange();
+            burgerchange();
+        }
+    }
+    function restaurantclick(){
+        if(restaurantcost<=money){
+            money -= restaurantcost;
+            restaurantcount++;
+            restaurantcost *= 1.2;
+            moneychange();
+            restaurantchange();
+        }
+    }
+    function factoryclick(){
+        if(factorycost<=money){
+            money -= factorycost;
+            factorycount++;
+            factorycost *= 1.2;
+            moneychange();
+            factorychange();
+        }
+    }
+    function farmclick(){
+        if(farmcost<=money){
+            money -= farmcost;
+            farmcount++;
+            farmcost *= 1.2;
+            moneychange();
+            farmchange();
+        }
+    }
+    function castleclick(){
+        if(castlecost<=money){
+            money -= castlecost;
+            castlecount++;
+            castlecost *= 1.2;
+            moneychange();
+            castlechange();
+        }
+    }
+    function asteroidclick(){
+        if(asteroidcost<=money){
+            money -= asteroidcost;
+            asteroidcount++;
+            asteroidcost *= 1.2;
+            moneychange();
+            asteroidchange();
+        }
+    }
+    function portalclick(){
+        if(portalcost<=money){
+            money -= portalcost;
+            portalcount++;
+            portalcost *= 1.2;
+            moneychange();
+            portalchange();
+        }
+    }
+    function fatconvertorclick(){
+        if(fatconvertorcost<=money){
+            money -= fatconvertorcost;
+            fatconvertorcount++;
+            fatconvertorcost *= 1.2;
+            moneychange();
+            fatconvertorchange();
+        }
+    }
+    function fishball1(){
+        if(money>=100 && upgradelist[11]==1){
+            money -= 100;
+            fishballkgps *= 2;
+            moneychange();
+            fishballchange();
+            document.getElementById("fishball1").style.display = "none";
+            upgradecount++;
+            upgradelist[11] = 2;
+            document.getElementById("upgradecountlabel").innerHTML = "Bought/Unlocked/Total Upgrades: " + upgradecount + "/" + unlockedupgrade + "/" + totalupgrade;
+        }
+    }
+    function fishball2(){
+        if(money>=1000 && upgradelist[12]==1){
+            money -= 1000;
+            fishballkgps *= 2;
+            moneychange();
+            fishballchange();
+            document.getElementById("fishball2").style.display = "none";
+            upgradecount++; 
+            upgradelist[12] = 2;
+            document.getElementById("upgradecountlabel").innerHTML = "Bought/Unlocked/Total Upgrades: " + upgradecount + "/" + unlockedupgrade + "/" + totalupgrade;
+        }
+    }
+    function fishball3(){
+        if(money>=10000 && upgradelist[13]==1){
+            money -= 10000;
+            fishballkgps *= 2;
+            moneychange();
+            fishballchange();
+            document.getElementById("fishball3").style.display = "none";
+            upgradecount++; 
+            upgradelist[13] = 2;
+            document.getElementById("upgradecountlabel").innerHTML = "Bought/Unlocked/Total Upgrades: " + upgradecount + "/" + unlockedupgrade + "/" + totalupgrade;
+        }
+    }
+    function burger1(){
+        if(money>=2500 && upgradelist[21]==1){
+            money -= 2500;
+            burgerkgps *= 2;
+            moneychange();
+            burgerchange();
+            document.getElementById("burger1").style.display = "none";
+            upgradecount++; 
+            upgradelist[21] = 2;
+            document.getElementById("upgradecountlabel").innerHTML = "Bought/Unlocked/Total Upgrades: " + upgradecount + "/" + unlockedupgrade + "/" + totalupgrade;
+        }
+    }
+    function burger2(){
+        if(money>=25000 && upgradelist[22]==1){
+            money -= 25000;
+            burgerkgps *= 2;
+            moneychange();
+            burgerchange();
+            document.getElementById("burger2").style.display = "none";
+            upgradecount++; 
+            upgradelist[22] = 2;
+            document.getElementById("upgradecountlabel").innerHTML = "Bought/Unlocked/Total Upgrades: " + upgradecount + "/" + unlockedupgrade + "/" + totalupgrade;
+        }
+    }
+    function burger3(){
+        if(money>=250000 && upgradelist[23]==1){
+            money -= 250000;
+            burgerkgps *= 2;
+            moneychange();
+            burgerchange();
+            document.getElementById("burger3").style.display = "none";
+            upgradecount++; 
+            upgradelist[23] = 2;
+            document.getElementById("upgradecountlabel").innerHTML = "Bought/Unlocked/Total Upgrades: " + upgradecount + "/" + unlockedupgrade + "/" + totalupgrade;
+        }
+    }
+    function restaurant1(){
+        if(money>=55000 && upgradelist[31]==1){
+            money -= 55000;
+            restaurantkgps *= 2;
+            moneychange();
+            restaurantchange();
+            document.getElementById("restaurant1").style.display = "none";
+            upgradecount++; 
+            upgradelist[31] = 2;
+            document.getElementById("upgradecountlabel").innerHTML = "Bought/Unlocked/Total Upgrades: " + upgradecount + "/" + unlockedupgrade + "/" + totalupgrade;
+        }
+    }
+    function restaurant2(){
+        if(money>=550000 && upgradelist[32]==1){
+            money -= 550000;
+            restaurantkgps *= 2;
+            moneychange();
+            restaurantchange();
+            document.getElementById("restaurant2").style.display = "none";
+            upgradecount++; 
+            upgradelist[32] = 2;
+            document.getElementById("upgradecountlabel").innerHTML = "Bought/Unlocked/Total Upgrades: " + upgradecount + "/" + unlockedupgrade + "/" + totalupgrade;
+        }
+    }
+    function restaurant3(){
+        if(money>=5500000 && upgradelist[33]==1){
+            money -= 5500000;
+            restaurantkgps *= 2;
+            moneychange();
+            restaurantchange();
+            document.getElementById("restaurant3").style.display = "none";
+            upgradecount++; 
+            upgradelist[33] = 2;
+            document.getElementById("upgradecountlabel").innerHTML = "Bought/Unlocked/Total Upgrades: " + upgradecount + "/" + unlockedupgrade + "/" + totalupgrade;
+        }
+    }
+    function factory1(){
+        if(money>=850000 && upgradelist[41]==1){
+            money -= 850000;
+            factorykgps *= 2;
+            moneychange();
+            factorychange();
+            document.getElementById("factory1").style.display = "none";
+            upgradecount++;
+            upgradelist[41] = 2;
+            document.getElementById("upgradecountlabel").innerHTML = "Bought/Unlocked/Total Upgrades: " + upgradecount + "/" + unlockedupgrade + "/" + totalupgrade;
+        }
+    }
+    function factory2(){
+        if(money>=8500000 && upgradelist[42]==1){
+            money -= 8500000;
+            factorykgps *= 2;
+            moneychange();
+            factorychange();
+            document.getElementById("factory2").style.display = "none";
+            upgradecount++; 
+            upgradelist[42] = 2;
+            document.getElementById("upgradecountlabel").innerHTML = "Bought/Unlocked/Total Upgrades: " + upgradecount + "/" + unlockedupgrade + "/" + totalupgrade;
+        }
+    }
+    function factory3(){
+        if(money>=85000000 && upgradelist[43]==1){
+            money -= 85000000;
+            factorykgps *= 2;
+            moneychange();
+            factorychange();
+            document.getElementById("factory3").style.display = "none";
+            upgradecount++; 
+            upgradelist[43] = 2;
+            document.getElementById("upgradecountlabel").innerHTML = "Bought/Unlocked/Total Upgrades: " + upgradecount + "/" + unlockedupgrade + "/" + totalupgrade;
+        }
+    }
+    function farm1(){
+        if(money>=10000000 && upgradelist[51]==1){
+            money -= 10000000;
+            farmkgps *= 2;
+            moneychange();
+            farmchange();
+            document.getElementById("farm1").style.display = "none";
+            upgradecount++; 
+            upgradelist[51] = 2;
+            document.getElementById("upgradecountlabel").innerHTML = "Bought/Unlocked/Total Upgrades: " + upgradecount + "/" + unlockedupgrade + "/" + totalupgrade;
+        }
+    }
+    function farm2(){
+        if(money>=100000000 && upgradelist[52]==1){
+            money -= 100000000;
+            farmkgps *= 2;
+            moneychange();
+            farmchange();
+            document.getElementById("farm2").style.display = "none";
+            upgradecount++; 
+            upgradelist[52] = 2;
+            document.getElementById("upgradecountlabel").innerHTML = "Bought/Unlocked/Total Upgrades: " + upgradecount + "/" + unlockedupgrade + "/" + totalupgrade;
+        }
+    }
+    function farm3(){
+        if(money>=1000000000 && upgradelist[53]==1){
+            money -= 1000000000;
+            farmkgps *= 2;
+            moneychange();
+            farmchange();
+            document.getElementById("farm3").style.display = "none";
+            upgradecount++; 
+            upgradelist[53] = 2;
+            document.getElementById("upgradecountlabel").innerHTML = "Bought/Unlocked/Total Upgrades: " + upgradecount + "/" + unlockedupgrade + "/" + totalupgrade;
+        }
+    }
+    function castle1(){
+        if(money>=150000000 && upgradelist[61]==1){
+            money -= 150000000;
+            castlekgps *= 2;
+            moneychange();
+            castlechange();
+            document.getElementById("castle1").style.display = "none";
+            upgradecount++; 
+            upgradelist[61] = 2;
+            document.getElementById("upgradecountlabel").innerHTML = "Bought/Unlocked/Total Upgrades: " + upgradecount + "/" + unlockedupgrade + "/" + totalupgrade;
+        }
+    }
+    function castle2(){
+        if(money>=1500000000 && upgradelist[62]==1){
+            money -= 1500000000;
+            castlekgps *= 2;
+            moneychange();
+            castlechange();
+            document.getElementById("castle2").style.display = "none";
+            upgradecount++;
+            upgradelist[62] = 2;
+            document.getElementById("upgradecountlabel").innerHTML = "Bought/Unlocked/Total Upgrades: " + upgradecount + "/" + unlockedupgrade + "/" + totalupgrade;
+        }
+    }
+    function castle3(){
+        if(money>=15000000000 && upgradelist[63]==1){
+            money -= 15000000000;
+            castlekgps *= 2;
+            moneychange();
+            castlechange();
+            document.getElementById("castle3").style.display = "none";
+            upgradecount++; 
+            upgradelist[63] = 2;
+            document.getElementById("upgradecountlabel").innerHTML = "Bought/Unlocked/Total Upgrades: " + upgradecount + "/" + unlockedupgrade + "/" + totalupgrade;
+        }
+    }
+    function asteroid1(){
+        if(money>=2800000000 && upgradelist[71]==1){
+            money -= 2800000000;
+            asteroidkgps *= 2;
+            moneychange();
+            asteroidchange();
+            document.getElementById("asteroid1").style.display = "none";
+            upgradecount++; 
+            upgradelist[71] = 2;
+            document.getElementById("upgradecountlabel").innerHTML = "Bought/Unlocked/Total Upgrades: " + upgradecount + "/" + unlockedupgrade + "/" + totalupgrade;
+        }
+    }
+    function asteroid2(){
+        if(money>=28000000000 && upgradelist[72]==1){
+            money -= 28000000000;
+            asteroidkgps *= 2;
+            moneychange();
+            asteroidchange();
+            document.getElementById("asteroid2").style.display = "none";
+            upgradecount++; 
+            upgradelist[72] = 2;
+            document.getElementById("upgradecountlabel").innerHTML = "Bought/Unlocked/Total Upgrades: " + upgradecount + "/" + unlockedupgrade + "/" + totalupgrade;
+        }
+    }
+    function asteroid3(){
+        if(money>=280000000000 && upgradelist[73]==1){
+            money -= 280000000000;
+            asteroidkgps *= 2;
+            moneychange();
+            asteroidchange();
+            document.getElementById("asteroid3").style.display = "none";
+            upgradecount++; 
+            upgradelist[73] = 2;
+            document.getElementById("upgradecountlabel").innerHTML = "Bought/Unlocked/Total Upgrades: " + upgradecount + "/" + unlockedupgrade + "/" + totalupgrade;
+        }
+    }
+    function portal1(){
+        if(money>=88e9 && upgradelist[81]==1){
+            money -= 88e9;
+            portalkgps *= 3;
+            moneychange();
+            portalchange();
+            document.getElementById("portal1").style.display = "none";
+            upgradecount++; 
+            upgradelist[81] = 2;
+            document.getElementById("upgradecountlabel").innerHTML = "Bought/Unlocked/Total Upgrades: " + upgradecount + "/" + unlockedupgrade + "/" + totalupgrade;
+        }
+    }
+    function portal2(){
+        if(money>=880e9 && upgradelist[82]==1){
+            money -= 880e9;
+            portalkgps *= 3;
+            moneychange();
+            portalchange();
+            document.getElementById("portal2").style.display = "none";
+            upgradecount++; 
+            upgradelist[82] = 2;
+            document.getElementById("upgradecountlabel").innerHTML = "Bought/Unlocked/Total Upgrades: " + upgradecount + "/" + unlockedupgrade + "/" + totalupgrade;
+        }
+    }
+    function fatconvertor1(){
+        if(money>=660e9 && upgradelist[91]==1){
+            money -= 660e9;
+            fatconvertorkgps *= 2;
+            moneychange();
+            fatconvertorchange();
+            document.getElementById("fatconvertor1").style.display = "none";
+            upgradecount++; 
+            upgradelist[91] = 2;
+            document.getElementById("upgradecountlabel").innerHTML = "Bought/Unlocked/Total Upgrades: " + upgradecount + "/" + unlockedupgrade + "/" + totalupgrade;
+        }
+    }
+    function fatconvertor2(){
+        if(money>=6600e9 && upgradelist[92]==1){
+            money -= 6600e9;
+            fatconvertorkgps *= 2;
+            moneychange();
+            fatconvertorchange();
+            document.getElementById("fatconvertor2").style.display = "none";
+            upgradecount++; 
+            upgradelist[92] = 2;
+            document.getElementById("upgradecountlabel").innerHTML = "Bought/Unlocked/Total Upgrades: " + upgradecount + "/" + unlockedupgrade + "/" + totalupgrade;
+        }
+    }
+    function fatconvertor3(){
+        if(money>=66000e9 && upgradelist[93]==1){
+            money -= 66000e9;
+            fatconvertorkgps *= 2;
+            moneychange();
+            fatconvertorchange();
+            document.getElementById("fatconvertor3").style.display = "none";
+            upgradecount++; 
+            upgradelist[93] = 2;
+            document.getElementById("upgradecountlabel").innerHTML = "Bought/Unlocked/Total Upgrades: " + upgradecount + "/" + unlockedupgrade + "/" + totalupgrade;
+        }
+    }
+    function snorlaxanimation(){ 
+        document.getElementById("snorlax").style.backgroundImage = "url(assets/main/snorlax2.png)";
+        setTimeout(function(){document.getElementById("snorlax").style.backgroundImage = "url(assets/main/snorlax1.png)";},1000);
+    } 
+    function moneychange(){
+        document.getElementById("moneydisplay").innerHTML = "$" + numtotext(money);
+        document.getElementById("fishballpercent").style.width = Math.min(200, money/fishballcost*200);
+        document.getElementById("burgerpercent").style.width = Math.min(200, money/burgercost*200);
+        document.getElementById("restaurantpercent").style.width = Math.min(200, money/restaurantcost*200);
+        document.getElementById("factorypercent").style.width = Math.min(200, money/factorycost*200);
+        document.getElementById("farmpercent").style.width = Math.min(200, money/farmcost*200);
+        document.getElementById("castlepercent").style.width = Math.min(200, money/castlecost*200);
+        document.getElementById("asteroidpercent").style.width = Math.min(200, money/asteroidcost*200);
+        document.getElementById("portalpercent").style.width = Math.min(200, money/portalcost*200);
+        document.getElementById("fatconvertorpercent").style.width = Math.min(200, money/fatconvertorcost*200);
+    }
+    function kgchange(){
+        document.getElementById("kgdisplay").innerHTML = numtotext(kg);
+        mpc = mpcpkg * kg;
+        mpcchange();
+    }
+    function kgpschange(){
+        kgps = (fishballkgps*fishballcount + burgerkgps*burgercount + restaurantkgps*restaurantcount + factorykgps*factorycount + farmkgps*farmcount + castlekgps*castlecount + asteroidkgps*asteroidcount + portalkgps*portalcount + fatconvertorkgps*fatconvertorcount)*kgpsmulti;
+        document.getElementById("kgpsdisplay").innerHTML = numtotext(kgps);
+        if (kgps!=0){  
+            document.getElementById("fishballdisplay2").innerHTML = "Total KGPS: " + numtotext(fishballkgps*fishballcount) + " (" + numtotext(fishballkgps*fishballcount*100/kgps) + "%)"
+            document.getElementById("burgerdisplay2").innerHTML = "Total KGPS: " + numtotext(burgerkgps*burgercount) + " (" + numtotext(burgerkgps*burgercount*100/kgps) + "%)"
+            document.getElementById("restaurantdisplay2").innerHTML = "Total KGPS: " + numtotext(restaurantkgps*restaurantcount) + " (" + numtotext(restaurantkgps*restaurantcount*100/kgps) + "%)"
+            document.getElementById("factorydisplay2").innerHTML = "Total KGPS: " + numtotext(factorykgps*factorycount) + " (" + numtotext(factorykgps*factorycount*100/kgps) + "%)"
+            document.getElementById("farmdisplay2").innerHTML = "Total KGPS: " + numtotext(farmkgps*farmcount) + " (" + numtotext(farmkgps*farmcount*100/kgps) + "%)"
+            document.getElementById("castledisplay2").innerHTML = "Total KGPS: " + numtotext(castlekgps*castlecount) + " (" + numtotext(castlekgps*castlecount*100/kgps) + "%)"
+            document.getElementById("asteroiddisplay2").innerHTML = "Total KGPS: " + numtotext(asteroidkgps*asteroidcount) + " (" + numtotext(asteroidkgps*asteroidcount*100/kgps) + "%)"
+            document.getElementById("portaldisplay2").innerHTML = "Total KGPS: " + numtotext(portalkgps*portalcount) + " (" + numtotext(portalkgps*portalcount*100/kgps) + "%)"
+            document.getElementById("fatconvertordisplay2").innerHTML = "Total KGPS: " + numtotext(fatconvertorkgps*fatconvertorcount) + " (" + numtotext(fatconvertorkgps*fatconvertorcount*100/kgps) + "%)"
+        }
+    }
+    function mpcchange(){
+        document.getElementById("mpcdisplay").innerHTML = numtotext(mpc);
+    }
+    function fishballchange(){
+        document.getElementById("fishballcountdisplay").innerHTML = fishballcount;
+        document.getElementById("fishballdisplay").innerHTML = "Cost:" + numtotext(fishballcost) + " KGPS:" + numtotext(fishballkgps);
+        document.getElementById("fishballpercent").style.width = Math.min(200, money/fishballcost*200);
+        if (fishballcount==1){
+            document.getElementById("fishballa1").style.display = "inline-block";
+            document.getElementById("fishball1").style.display = "inline-block";
+            achicount++;
+            document.getElementById("achicountlabel").innerHTML = "Unlocked/Total Achievements: " + achicount + "/" + totalachi;
+            unlockedupgrade++;
+            document.getElementById("upgradecountlabel").innerHTML = "Bought/Unlocked/Total Upgrades: " + upgradecount + "/" + unlockedupgrade + "/" + totalupgrade;
+        }
+        if (fishballcount==7){
+            document.getElementById("fishballa2").style.display = "inline-block";
+            document.getElementById("fishball2").style.display = "inline-block";
+            achicount++;
+            document.getElementById("achicountlabel").innerHTML = "Unlocked/Total Achievements: " + achicount + "/" + totalachi;
+            unlockedupgrade++;
+            document.getElementById("upgradecountlabel").innerHTML = "Bought/Unlocked/Total Upgrades: " + upgradecount + "/" + unlockedupgrade + "/" + totalupgrade;
+        }
+        if (fishballcount==25){
+            document.getElementById("fishballa3").style.display = "inline-block";
+            document.getElementById("fishball3").style.display = "inline-block";
+            achicount++;
+            document.getElementById("achicountlabel").innerHTML = "Unlocked/Total Achievements: " + achicount + "/" + totalachi;
+            unlockedupgrade++;
+            document.getElementById("upgradecountlabel").innerHTML = "Bought/Unlocked/Total Upgrades: " + upgradecount + "/" + unlockedupgrade + "/" + totalupgrade;
+        }
+        kgpschange();
+    }
+    function burgerchange(){
+        document.getElementById("burgercountdisplay").innerHTML = burgercount;
+        document.getElementById("burgerdisplay").innerHTML = "Cost:" + numtotext(burgercost) + " KGPS:" + numtotext(burgerkgps);
+        document.getElementById("burgerpercent").style.width = Math.min(200, money/burgercost*200);
+        if (burgercount==1){
+            document.getElementById("burgera1").style.display = "inline-block";
+            document.getElementById("burger1").style.display = "inline-block";
+            achicount++;
+            document.getElementById("achicountlabel").innerHTML = "Unlocked/Total Achievements: " + achicount + "/" + totalachi;
+            unlockedupgrade++;
+            document.getElementById("upgradecountlabel").innerHTML = "Bought/Unlocked/Total Upgrades: " + upgradecount + "/" + unlockedupgrade + "/" + totalupgrade;
+        }
+        if (burgercount==10){
+            document.getElementById("burgera2").style.display = "inline-block";
+            document.getElementById("burger2").style.display = "inline-block";
+            achicount++;
+            document.getElementById("achicountlabel").innerHTML = "Unlocked/Total Achievements: " + achicount + "/" + totalachi;
+            unlockedupgrade++;
+            document.getElementById("upgradecountlabel").innerHTML = "Bought/Unlocked/Total Upgrades: " + upgradecount + "/" + unlockedupgrade + "/" + totalupgrade;
+        }
+        if (burgercount==25){
+            document.getElementById("burgera3").style.display = "inline-block";
+            document.getElementById("burger3").style.display = "inline-block";
+            achicount++;
+            document.getElementById("achicountlabel").innerHTML = "Unlocked/Total Achievements: " + achicount + "/" + totalachi;
+            unlockedupgrade++;
+            document.getElementById("upgradecountlabel").innerHTML = "Bought/Unlocked/Total Upgrades: " + upgradecount + "/" + unlockedupgrade + "/" + totalupgrade;
+        }
+        kgpschange();
+    }
+    function restaurantchange(){
+        document.getElementById("restaurantcountdisplay").innerHTML = restaurantcount;
+        document.getElementById("restaurantdisplay").innerHTML = "Cost:" + numtotext(restaurantcost) + " KGPS:" + numtotext(restaurantkgps);
+        document.getElementById("restaurantpercent").style.width = Math.min(200, money/restaurantcost*200);
+        if (restaurantcount==1){
+            document.getElementById("restauranta1").style.display = "inline-block";
+            document.getElementById("restaurant1").style.display = "inline-block";
+            achicount++;
+            document.getElementById("achicountlabel").innerHTML = "Unlocked/Total Achievements: " + achicount + "/" + totalachi;
+            unlockedupgrade++;
+            document.getElementById("upgradecountlabel").innerHTML = "Bought/Unlocked/Total Upgrades: " + upgradecount + "/" + unlockedupgrade + "/" + totalupgrade;
+        }
+        if (restaurantcount==10){
+            document.getElementById("restauranta2").style.display = "inline-block";
+            document.getElementById("restaurant2").style.display = "inline-block";
+            achicount++;
+            document.getElementById("achicountlabel").innerHTML = "Unlocked/Total Achievements: " + achicount + "/" + totalachi;
+            unlockedupgrade++;
+            document.getElementById("upgradecountlabel").innerHTML = "Bought/Unlocked/Total Upgrades: " + upgradecount + "/" + unlockedupgrade + "/" + totalupgrade;
+        }
+        if (restaurantcount==25){
+            document.getElementById("restauranta3").style.display = "inline-block";
+            document.getElementById("restaurant3").style.display = "inline-block";
+            achicount++;
+            document.getElementById("achicountlabel").innerHTML = "Unlocked/Total Achievements: " + achicount + "/" + totalachi;
+            unlockedupgrade++;
+            document.getElementById("upgradecountlabel").innerHTML = "Bought/Unlocked/Total Upgrades: " + upgradecount + "/" + unlockedupgrade + "/" + totalupgrade;
+        }
+        kgpschange();
+    }
+    function factorychange(){
+        document.getElementById("factorycountdisplay").innerHTML = factorycount;
+        document.getElementById("factorydisplay").innerHTML = "Cost:" + numtotext(factorycost) + " KGPS:" + numtotext(factorykgps);
+        document.getElementById("factorypercent").style.width = Math.min(200, money/factorycost*200);
+        if (factorycount==1){
+            document.getElementById("factorya1").style.display = "inline-block";
+            document.getElementById("factory1").style.display = "inline-block";
+            achicount++;
+            document.getElementById("achicountlabel").innerHTML = "Unlocked/Total Achievements: " + achicount + "/" + totalachi;
+            unlockedupgrade++;
+            document.getElementById("upgradecountlabel").innerHTML = "Bought/Unlocked/Total Upgrades: " + upgradecount + "/" + unlockedupgrade + "/" + totalupgrade;
+        }
+        if (factorycount==10){
+            document.getElementById("factorya2").style.display = "inline-block";
+            document.getElementById("factory2").style.display = "inline-block";
+            achicount++;
+            document.getElementById("achicountlabel").innerHTML = "Unlocked/Total Achievements: " + achicount + "/" + totalachi;
+            unlockedupgrade++;
+            document.getElementById("upgradecountlabel").innerHTML = "Bought/Unlocked/Total Upgrades: " + upgradecount + "/" + unlockedupgrade + "/" + totalupgrade;
+        }
+        if (factorycount==25){
+            document.getElementById("factorya3").style.display = "inline-block";
+            document.getElementById("factory3").style.display = "inline-block";
+            achicount++;
+            document.getElementById("achicountlabel").innerHTML = "Unlocked/Total Achievements: " + achicount + "/" + totalachi;
+            unlockedupgrade++;
+            document.getElementById("upgradecountlabel").innerHTML = "Bought/Unlocked/Total Upgrades: " + upgradecount + "/" + unlockedupgrade + "/" + totalupgrade;
+        }
+        kgpschange();
+    }
+    function farmchange(){
+        document.getElementById("farmcountdisplay").innerHTML = farmcount;
+        document.getElementById("farmdisplay").innerHTML = "Cost:" + numtotext(farmcost) + " KGPS:" + numtotext(farmkgps);
+        document.getElementById("farmpercent").style.width = Math.min(200, money/farmcost*200);
+        if (farmcount==1){
+            document.getElementById("farma1").style.display = "inline-block";
+            document.getElementById("farm1").style.display = "inline-block";
+            achicount++;
+            document.getElementById("achicountlabel").innerHTML = "Unlocked/Total Achievements: " + achicount + "/" + totalachi;
+            unlockedupgrade++;
+            document.getElementById("upgradecountlabel").innerHTML = "Bought/Unlocked/Total Upgrades: " + upgradecount + "/" + unlockedupgrade + "/" + totalupgrade;
+        }
+        if (farmcount==9){
+            document.getElementById("farma2").style.display = "inline-block";
+            document.getElementById("farm2").style.display = "inline-block";
+            achicount++;
+            document.getElementById("achicountlabel").innerHTML = "Unlocked/Total Achievements: " + achicount + "/" + totalachi;
+            unlockedupgrade++;
+            document.getElementById("upgradecountlabel").innerHTML = "Bought/Unlocked/Total Upgrades: " + upgradecount + "/" + unlockedupgrade + "/" + totalupgrade;
+        }
+        if (farmcount==25){
+            document.getElementById("farma3").style.display = "inline-block";
+            document.getElementById("farm3").style.display = "inline-block";
+            achicount++;
+            document.getElementById("achicountlabel").innerHTML = "Unlocked/Total Achievements: " + achicount + "/" + totalachi;
+            unlockedupgrade++;
+            document.getElementById("upgradecountlabel").innerHTML = "Bought/Unlocked/Total Upgrades: " + upgradecount + "/" + unlockedupgrade + "/" + totalupgrade;
+        }
+        kgpschange();
+    }
+    function castlechange(){
+        document.getElementById("castlecountdisplay").innerHTML = castlecount;
+        document.getElementById("castledisplay").innerHTML = "Cost:" + numtotext(castlecost) + " KGPS:" + numtotext(castlekgps);
+        document.getElementById("castlepercent").style.width = Math.min(200, money/castlecost*200);
+        if (castlecount==1){
+            document.getElementById("castlea1").style.display = "inline-block";
+            document.getElementById("castle1").style.display = "inline-block";
+            achicount++;
+            document.getElementById("achicountlabel").innerHTML = "Unlocked/Total Achievements: " + achicount + "/" + totalachi;
+            unlockedupgrade++;
+            document.getElementById("upgradecountlabel").innerHTML = "Bought/Unlocked/Total Upgrades: " + upgradecount + "/" + unlockedupgrade + "/" + totalupgrade;
+        }
+        if (castlecount==8){
+            document.getElementById("castlea2").style.display = "inline-block";
+            document.getElementById("castle2").style.display = "inline-block";
+            achicount++;
+            document.getElementById("achicountlabel").innerHTML = "Unlocked/Total Achievements: " + achicount + "/" + totalachi;
+            unlockedupgrade++;
+            document.getElementById("upgradecountlabel").innerHTML = "Bought/Unlocked/Total Upgrades: " + upgradecount + "/" + unlockedupgrade + "/" + totalupgrade;
+        }
+        if (castlecount==25){
+            document.getElementById("castlea3").style.display = "inline-block";
+            document.getElementById("castle3").style.display = "inline-block";
+            achicount++;
+            document.getElementById("achicountlabel").innerHTML = "Unlocked/Total Achievements: " + achicount + "/" + totalachi;
+            unlockedupgrade++;
+            document.getElementById("upgradecountlabel").innerHTML = "Bought/Unlocked/Total Upgrades: " + upgradecount + "/" + unlockedupgrade + "/" + totalupgrade;
+        }
+        kgpschange();
+    }
+    function asteroidchange(){
+        document.getElementById("asteroidcountdisplay").innerHTML = asteroidcount;
+        document.getElementById("asteroiddisplay").innerHTML = "Cost:" + numtotext(asteroidcost) + " KGPS:" + numtotext(asteroidkgps);
+        document.getElementById("asteroidpercent").style.width = Math.min(200, money/asteroidcost*200);
+        if (asteroidcount==1){
+            document.getElementById("asteroida1").style.display = "inline-block";
+            document.getElementById("asteroid1").style.display = "inline-block";
+            achicount++;
+            document.getElementById("achicountlabel").innerHTML = "Unlocked/Total Achievements: " + achicount + "/" + totalachi;
+            unlockedupgrade++;
+            document.getElementById("upgradecountlabel").innerHTML = "Bought/Unlocked/Total Upgrades: " + upgradecount + "/" + unlockedupgrade + "/" + totalupgrade;
+        }
+        if (asteroidcount==8){
+            document.getElementById("asteroida2").style.display = "inline-block";
+            document.getElementById("asteroid2").style.display = "inline-block";
+            achicount++;
+            document.getElementById("achicountlabel").innerHTML = "Unlocked/Total Achievements: " + achicount + "/" + totalachi;
+            unlockedupgrade++;
+            document.getElementById("upgradecountlabel").innerHTML = "Bought/Unlocked/Total Upgrades: " + upgradecount + "/" + unlockedupgrade + "/" + totalupgrade;
+        }
+        if (asteroidcount==27){
+            document.getElementById("asteroida3").style.display = "inline-block";
+            document.getElementById("asteroid3").style.display = "inline-block";
+            achicount++;
+            document.getElementById("achicountlabel").innerHTML = "Unlocked/Total Achievements: " + achicount + "/" + totalachi;
+            unlockedupgrade++;
+            document.getElementById("upgradecountlabel").innerHTML = "Bought/Unlocked/Total Upgrades: " + upgradecount + "/" + unlockedupgrade + "/" + totalupgrade;
+        }
+        kgpschange();
+    }
+    function portalchange(){
+        document.getElementById("portalcountdisplay").innerHTML = portalcount;
+        document.getElementById("portaldisplay").innerHTML = "Cost:" + numtotext(portalcost) + " KGPS:" + numtotext(portalkgps);
+        document.getElementById("portalpercent").style.width = Math.min(200, money/portalcost*200);
+        if (portalcount==1){
+            document.getElementById("portala1").style.display = "inline-block";
+            achicount++;
+            document.getElementById("achicountlabel").innerHTML = "Unlocked/Total Achievements: " + achicount + "/" + totalachi;
+            /* unlocks summon code */
+        }
+        if (portalcount==7){
+            document.getElementById("portala2").style.display = "inline-block";
+            document.getElementById("portal1").style.display = "inline-block";
+            achicount++;
+            document.getElementById("achicountlabel").innerHTML = "Unlocked/Total Achievements: " + achicount + "/" + totalachi;
+            unlockedupgrade++;
+            document.getElementById("upgradecountlabel").innerHTML = "Bought/Unlocked/Total Upgrades: " + upgradecount + "/" + unlockedupgrade + "/" + totalupgrade;
+        }
+        if (portalcount==25){
+            document.getElementById("portala3").style.display = "inline-block";
+            document.getElementById("portal2").style.display = "inline-block";
+            achicount++;
+            document.getElementById("achicountlabel").innerHTML = "Unlocked/Total Achievements: " + achicount + "/" + totalachi;
+            unlockedupgrade++;
+            document.getElementById("upgradecountlabel").innerHTML = "Bought/Unlocked/Total Upgrades: " + upgradecount + "/" + unlockedupgrade + "/" + totalupgrade;
+        }
+        kgpschange();
+    }
+    function fatconvertorchange(){
+        document.getElementById("fatconvertorcountdisplay").innerHTML = fatconvertorcount;
+        document.getElementById("fatconvertordisplay").innerHTML = "Cost:" + numtotext(fatconvertorcost) + " KGPS:" + numtotext(fatconvertorkgps);
+        document.getElementById("fatconvertorpercent").style.width = Math.min(200, money/fatconvertorcost*200);
+        if (fatconvertorcount==1){
+            document.getElementById("fatconvertora1").style.display = "inline-block";
+            document.getElementById("fatconvertor1").style.display = "inline-block";
+            achicount++;
+            document.getElementById("achicountlabel").innerHTML = "Unlocked/Total Achievements: " + achicount + "/" + totalachi;
+            unlockedupgrade++;
+            document.getElementById("upgradecountlabel").innerHTML = "Bought/Unlocked/Total Upgrades: " + upgradecount + "/" + unlockedupgrade + "/" + totalupgrade;
+        }
+        if (fatconvertorcount==10){
+            document.getElementById("fatconvertora2").style.display = "inline-block";
+            document.getElementById("fatconvertor2").style.display = "inline-block";
+            achicount++;
+            document.getElementById("achicountlabel").innerHTML = "Unlocked/Total Achievements: " + achicount + "/" + totalachi;
+            unlockedupgrade++;
+            document.getElementById("upgradecountlabel").innerHTML = "Bought/Unlocked/Total Upgrades: " + upgradecount + "/" + unlockedupgrade + "/" + totalupgrade;
+        }
+        if (fatconvertorcount==25){
+            document.getElementById("fatconvertora3").style.display = "inline-block";
+            document.getElementById("fatconvertor3").style.display = "inline-block";
+            achicount++;
+            document.getElementById("achicountlabel").innerHTML = "Unlocked/Total Achievements: " + achicount + "/" + totalachi;
+            unlockedupgrade++;
+            document.getElementById("upgradecountlabel").innerHTML = "Bought/Unlocked/Total Upgrades: " + upgradecount + "/" + unlockedupgrade + "/" + totalupgrade;
+        }
+        kgpschange();
+    }
+    function specialitemchange(){
+        document.getElementById("goldenfishballdisplay").innerHTML = numtotext(goldenfishballcount);
+        document.getElementById("fatblobdisplay").innerHTML = numtotext(fatblobcount);
+    }
+    function hahadisplaynonegobrrr(){
+        document.getElementById("shop").style.display = "none";
+        document.getElementById("upgrade").style.display = "none";
+        document.getElementById("achi").style.display = "none";
+        document.getElementById("setting").style.display = "none";
+        document.getElementById("evolutionshop").style.display = "none";
+        document.getElementById("heavenlyshop").style.display = "none";
+        document.getElementById("minecraft").style.display = "none";
+        document.getElementById("summoning").style.display = "none";
+    }
+    function shop(){
+        hahadisplaynonegobrrr();
+        document.getElementById("shop").style.display = "inline-block";
+    }
+    function upgrade(){
+        hahadisplaynonegobrrr();
+        document.getElementById("upgrade").style.display = "inline-block";
+    }
+    function achi(){
+        hahadisplaynonegobrrr();
+        document.getElementById("achi").style.display = "inline-block";
+    }
+    function setting(){
+        hahadisplaynonegobrrr();
+        document.getElementById("setting").style.display = "inline-block";
+    }
+    function evolutionshop(){
+        hahadisplaynonegobrrr();
+        document.getElementById("evolutionshop").style.display = "inline-block";
+    }
+    function heavenlyshop(){
+        hahadisplaynonegobrrr();
+        document.getElementById("heavenlyshop").style.display = "inline-block";
+    }
+    function minecraft(){
+        hahadisplaynonegobrrr();
+        document.getElementById("minecraft").style.display = "inline-block";
+    }
+    function summoning(){
+        hahadisplaynonegobrrr();
+        document.getElementById("summoning").style.display = "inline-block";
+    }
+    function help(){
+        document.getElementById("game").style.display = "none";
+        document.getElementById("help").style.display = "block";
+    }
+    function css(){
+        document.getElementById("game").style.display = "none";
+        document.getElementById("css").style.display = "block";
+    }
+    function changelog(){
+        document.getElementById("game").style.display = "none";
+        document.getElementById("changelog").style.display = "block";
+    }
+    function backtogame(){
+        document.getElementById("game").style.display = "block";
+        document.getElementById("changelog").style.display = "none";
+        document.getElementById("css").style.display = "none";
+        document.getElementById("help").style.display = "none";
+    }
+
+</script>
+
+</html>

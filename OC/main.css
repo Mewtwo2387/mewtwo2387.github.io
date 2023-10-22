@@ -1,0 +1,118 @@
+@font-face {
+    font-family: Genshin;
+    src: url(../Project\ Keqei/assets/fonts/Genshin_Impact_Font.woff);
+}
+#background{
+    width:100%;
+    height:100%;
+    position:fixed;
+    top:0px;
+    left:0px;
+    background:linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),url("../Project\ Keqei/assets/images/main/keqei.jpg");
+    z-index:-999;
+}
+#middle{
+    position:absolute;
+    top:15%;
+    left:10%;
+    right:10%;
+    background-color:rgba(0,0,0,0.8);
+    border-radius:20px;
+    min-height:80%;
+}
+#inner{
+    margin:3%;
+    position:relative;
+}
+*{
+    font-family: Genshin;
+    color:white;
+}
+.title{
+    font-size:3em;
+}
+a{
+    color:#A6D
+}strong{
+    color:#CFF
+}
+.charimg{
+    float:right;
+    width:30%;
+    margin:2%;
+}
+h6{
+    font-size:1.1em;
+    margin-top:0.8em;
+    margin-bottom:0.8em;
+}
+h2{
+    border-bottom:1px solid #777;
+    margin-top:2em;
+}
+.header{
+    background-color:rgba(102,34,136,0.5)
+}
+.odd{
+    background-color:rgba(170,102,221,0.3)
+}
+.even{
+    background-color:rgba(204,136,255,0.3)
+}
+td{
+    padding:5px;
+}
+#top > div{
+    background:rgba(102,34,136,0.3);
+    font-size:1.5em;
+    flex-grow:1;
+    text-align:center;
+    margin:1px;
+}
+#top > div:hover{
+    background:rgba(102,34,136,0.5);
+}
+#top > div div{
+    width:100%;
+    bottom:-2px;
+    height:2px;
+    background:#A6D;
+    transition: width 1s;
+    margin:auto;
+}
+#top > div:hover div{
+    width:30%;
+    background:#C8F
+}
+#top{
+    display:flex;
+    flex-direction: row;
+}
+input{
+    position:relative;
+    background-color:rgba(102,34,136,0.5);
+    border:none;
+    border-radius:5px;
+    display:block;
+    margin-left:auto;
+    width:40%;
+    margin-top:10px;
+    border-bottom:2px solid #84A;
+    border-right:2px solid #84A;
+    height:2em;
+    color:#D9F
+}
+input:focus {
+    outline: none;
+}
+.OC{
+    width:100%;
+    background:linear-gradient(rgba(102,34,136,0.1),rgba(102,34,136,0.3));
+    border-bottom:2px solid #629;
+}
+h3{
+    margin:5px;
+}
+.OCinner{
+    margin:3%;
+}

@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <script src="login.js"></script>
+        <script src="shorthand.js"></script>
+        <script src="websocket.js"></script>
+        <link href="main.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Oxanium" rel="stylesheet">
+    </head>
+    <body>
+        <div id="chatDiv"  style="display:none">
+            <h3 class="mainText" style="white-space: pre-wrap;" id="chat">If you got in here the log in worked (you can chat but can't see previous chat messages)
+            </h3>
+            <div style="display:flex;width:100%;position:absolute;bottom:0px;height:30px;">
+                <input type="text" id="chatInput">
+                <button id="chatButton" onclick="chat()">SEND</button>
+            </div>
+            
+        </div>
+        <div id="mainDiv">
+            <div id="loginDiv">
+                <h1 class="mainTitle">LOG IN</h1>      
+                <h2 class="mainText">Username</h2>
+                <input type="text" class="mainInput" id="loginUsername">
+                <h2 class="mainText">Password</h2>
+                <input type="text" class="mainInput" id="loginPassword">
+                <br><br>
+                <button class="mainButton" onclick="login()">Log In</button>
+                <h3 class="mainText" id="loginError"></h3>
+            </div>
+
+            <div id="signupDiv">
+                <h1 class="mainTitle">SIGN UP</h1>      
+                <h2 class="mainText">Username</h2>
+                <input type="text" class="mainInput" id="signupUsername">
+                <h2 class="mainText">Password</h2>
+                <input type="text" class="mainInput" id="signupPassword">
+                <h2 class="mainText">Retype Password</h2>
+                <input type="text" class="mainInput" id="signupPassword2">
+                <br><br>
+                <button class="mainButton" onclick="signup()">Sign Up</button>
+                <h3 class="mainText" id="signupError"></h3>
+            </div>
+
+            <div id="infoDiv">
+                <h1 class="mainTitle">v20230603.01</h1>  
+                <h3 class="mainText" style="white-space: pre-wrap;">Just testing the login system. This isn't the actual login screen and there's nothing but a chat when you login.
+
+And don't use your actual password here, there's 0 encryption for now.
+
+Keqing :yanfeismug:
+                </h3> 
+            </div>
+        </div>
+    </body>
+</html>
