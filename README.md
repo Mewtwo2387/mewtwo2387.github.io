@@ -9,15 +9,19 @@ This is basically all my code except for the basement stuff like incursion which
 
 ## [Avaritilax 4](https://mewtwo2387.github.io/Avaritilax/)
 A remade version of [Idle Snorlax 3](https://mewtwo2387.github.io/SC3/) with slightly better everything.
+
 This is probably the only thing that is playable here.
-Now with mining and crafting in Aplha 1.1.2.
+
+Now with mining and crafting in Alpha 1.1.2.
 
 ## [Project Keqei](https://mewtwo2387.github.io/Project%20Keqei/)
 An online multiplayer turn-based rpg 6v6 gacha game, featuring members from TheGenshinPlace (and OC made by the members) as the characters. The storyline focuses on Ei breaking the fourth wall and excaping the world, while Keq and the egirls trying to fix the glitches and diasters caused by Ei.
+
 *(None of these are actually made, the game is discontinued before it even started and will be replaced with Transient Assault / Incursion in the future. And, the server is offline anyways.)*
 
 ## [QueQat](https://mewtwo2387.github.io/QueQat)
 An AI made with Deep Q-Learning, used to reduce queueing time in multi-queue systems where different people have different service times, such as supermarkets. QueQat can assign customers to queues based on their service time, and can reduce the total waiting time by approximately 20%.
+
 *(Wow, a project that is actually complete here! Unfortunately, the flask app isn't up either so there's nothing to try. Unless you time travel back to August 2022 in Hong Kong Central Library to find me in an exhibition.)*
 
 ## [Re:Ei](https://github.com/Mewtwo2387/mewtwo2387.github.io/tree/main/Ei2)
@@ -25,6 +29,7 @@ The newer Ei bot for The Basement, with stuff like TGP hangman, member lore, ima
 
 ## [Idle Snorlax 3](https://mewtwo2387.github.io/SC3/)
 An old version of [Avaritilax 4](https://mewtwo2387.github.io/Avaritilax/) with slightly worse everything.
+
 Anyways, did I even talked about what this Snorlax game is here?
 
 
