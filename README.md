@@ -1,7 +1,9 @@
 # Ei's Github Page I guess
 
 Oh hello in here :yanfeismug:
+
 I literally pushed my entire project folder in github so there's all these half-complete weird stuff that doesn't work
+
 This is basically all my code except for the basement stuff like incursion which is in the [Basement's Collective Repo](https://github.com/Mewtwo2387/basement) and the closed-source stuff from my work which you have to pay to use.
 
 
