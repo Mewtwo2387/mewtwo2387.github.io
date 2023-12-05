@@ -299,7 +299,7 @@ data =
                     "id": 'a',
                     "name": "DM CW",
                     "type": "cw",
-                    "maxScore": 100,
+                    "maxScore": 20,
                     "weight": 0.05,
                     "date": "Nov 2"
                 },
@@ -307,7 +307,7 @@ data =
                     "id": 'b',
                     "name": "PL CW",
                     "type": "cw",
-                    "maxScore": 100,
+                    "maxScore": 20,
                     "weight": 0.05,
                     "date": "Nov 30"
                 },
@@ -315,7 +315,7 @@ data =
                     "id": 'c',
                     "name": "FOL CW",
                     "type": "cw",
-                    "maxScore": 100,
+                    "maxScore": 20,
                     "weight": 0.05,
                     "date": "Feb 9"
                 },
