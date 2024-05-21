@@ -1,3 +1,4 @@
+// updates the progress bars and calculates the average grade
 function update(){
     totalpercent = 0
     totalcomplete = 0
@@ -53,10 +54,10 @@ function update(){
     saveScore()
 }
 
-
+// load modules
 function load(){
-    if(getCookie("data")!=''){
-        data = JSON.parse(getCookie("data"))
+    if(localStorage.data!=undefined){
+        data = JSON.parse(localStorage.data)
     }else{
         data = originalData
     }
@@ -80,10 +81,11 @@ setTimeout(() => {
     document.getElementById('jsoninput').value = JSON.stringify(data,null,4)
 },100)
 
+// load scores
 function loadScore(){
-    cookie = getCookie("scores")
-    if(cookie!=''){
-        scores = JSON.parse(getCookie("scores"))
+    restoreCookies()
+    if(localStorage.scores!=undefined){
+        scores = JSON.parse(localStorage.scores)
         for(const module of data.modules){
             for(const task of module.tasks){
                 id = module.id + task.id
@@ -102,11 +104,46 @@ function saveScore(){
             scores[id] = document.getElementById('i' + id).value
         }
     }
-    setCookie("scores",JSON.stringify(scores))
+    localStorage.scores = JSON.stringify(scores)
+}
+
+function switchtab(){
+    if(document.getElementById("main").style.display=="none"){
+        document.getElementById("main").style.display="block"
+        document.getElementById("json").style.display="none"
+    }else{
+        document.getElementById("main").style.display="none"
+        document.getElementById("json").style.display="block"
+    }
+}
+
+function updateJSON(){
+    try{
+        data = JSON.parse(document.getElementById("jsoninput").value)
+        localStorage.data = JSON.stringify(data)
+        document.getElementById('table').innerHTML = load()
+        loadScore()
+        switchtab()
+    }catch{
+        window.alert("Invalid JSON!")
+    }
+}
+
+function resetJSON(){
+    document.getElementById("jsoninput").value = JSON.stringify(originalData,null,4)
+    updateJSON()
 }
 
 
-// cookies
+
+// Switching from cookies to local storage for those that had stuff saved in cookies
+
+function restoreCookies(){
+    cookie = getCookie("scores")
+    if(cookie!=''){
+        localStorage.scores = cookie
+    }
+}
 
 function getCookie(cname) {
     let name = cname + "=";
@@ -123,34 +160,3 @@ function getCookie(cname) {
     }
     return "";
   }
-
-function setCookie(cname, cvalue) {
-    document.cookie = cname + "=" + cvalue + "; expires=Fri, 31 Dec 9999 23:59:59 GMT";
-}
-
-function switchtab(){
-    if(document.getElementById("main").style.display=="none"){
-        document.getElementById("main").style.display="block"
-        document.getElementById("json").style.display="none"
-    }else{
-        document.getElementById("main").style.display="none"
-        document.getElementById("json").style.display="block"
-    }
-}
-
-function updateJSON(){
-    try{
-        data = JSON.parse(document.getElementById("jsoninput").value)
-        setCookie("data",JSON.stringify(data))
-        document.getElementById('table').innerHTML = load()
-        loadScore()
-        switchtab()
-    }catch{
-        window.alert("Invalid JSON!")
-    }
-}
-
-function resetJSON(){
-    document.getElementById("jsoninput").value = JSON.stringify(originalData,null,4)
-    updateJSON()
-}
