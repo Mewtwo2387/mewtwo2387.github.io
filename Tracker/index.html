@@ -1,25 +1,25 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Tracker</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Imperial CS Tracker</title>
   <link rel="stylesheet" href="styles.css" type="text/css">
   <script src="script.js"></script>
   <script src="data.js"></script>
 </head>
 <body>
   <div class="top">
-    <h1 class="topText">Imperial CS Y1 Tracker</h1>
-    <img src="json.png" class="topImg" onclick="switchtab()">
-    <!--- (Menu - TBA)
-    <div type="button" class="topImg" onclick="menu()">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="30" height="30">
-        <path fill-rule="evenodd" d="M2 12.5a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"></path>
-      </svg>
-    </div>
-    -->
+    <h1 class="topText">Imperial CS Tracker</h1>
     <img src="github.png" class="topImg" onclick="window.open('https://github.com/Mewtwo2387/tracker')">
   </div>
-  <div id="main" style="display:block">
+
+  <div class="tabs">
+    <button class="tablinks" onclick="switchCourse('year1')" id="year1">Computing Year 1</button>
+    <button class="tablinks" onclick="switchCourse('year2')" id="year2">Computing Year 2</button>
+  </div>
+
+  <div id="main">
     <div id="notice" style="margin-left: 5%;margin-right: 5%;border-radius: 5px;width: 90%;background-color: rgba(204,136,255,0.3);padding: 10px; display:none;">
       <h2>Notice</h2>
       <b>The max scores have been updated to match Scientia. Make sure to update your inputs.</b>
@@ -35,15 +35,6 @@
     </div>
     <br>
     <table id="table"></table>
-  </div>
-  <div id="json" style="display:none">
-    <div style="padding-left:5%;padding-right:5%;width:90%;">
-      <h1>Custom JSON</h1>
-      <textarea id="jsoninput" style="width:100%;height:500px;border-radius:10px;"></textarea>
-      <button onclick="updateJSON()">Update</button>
-      <button onclick="resetJSON()">Reset</button>
-      <button onclick="switchtab()">Back</button>
-    </div>
   </div>
 </body>
 </html>

@@ -115,3 +115,23 @@ h1, h2{
     font-family: monospace;
     color:#004
 }
+
+.tabs {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+  }
+
+  .tablinks {
+    background-color: #f1f1f1;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    margin: 0 5px;
+  }
+
+  .tablinks.active {
+    background-color: #cc88ff;
+    color: white;
+  }

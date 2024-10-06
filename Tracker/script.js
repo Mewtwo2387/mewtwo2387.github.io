@@ -1,5 +1,72 @@
+let currentCourse = 'year1';
+
+function switchCourse(course) {
+    currentCourse = course;
+    setActiveTab(course);
+    document.getElementById('table').innerHTML = loadCourseData(course);
+    loadCourseScore(course);
+}
+
+function setActiveTab(course) {
+    const tabs = document.getElementsByClassName('tablinks');
+    for (let i = 0; i < tabs.length; i++) {
+        tabs[i].classList.remove('active');
+    }
+    document.getElementById(course).classList.add('active');
+}
+
+function loadCourseData(course) {
+    const data = modulesData[course];
+    html = "<tr><th>Module</th><th>Tasks</th><th>Score</th></tr>"
+    for(const module of data.modules){
+        for(const task of module.tasks){
+            if(task.id=='a'){
+                html += `<tr><td rowspan="${module.tasks.length}"><span class="module">${module.name}</span><br><span class="small">(${module.credits} credits - ${(module.credits/data.totalCredits*100).toFixed(2)}%)</span><br><b id="p${module.id}">0.00%</b><br><br><div class="progress-bar"><div class="progress-bar-inner" style="width:0%" id="${'b'+module.id}"></div></div><span class="small" id="${'m'+module.id}">--/100% of module</span><br><span class="small" id="${'a'+module.id}">--/--% of all</span><div class="progress-bar"><div class="progress-bar-inner" style="width:0%" id="${'bc'+module.id}"></div></div><span class="small" id="${'mc'+module.id}">--/--% of module</span><br><span class="small" id="${'ac'+module.id}">--/--% of all</span></td>`
+            }else{
+                html += `<tr>`
+            }
+            html += `<td class="${task.type}">${task.name}<br><span class="small">(${(task.weight*100).toFixed(2)}%)</span><br><span class="small">(${task.date})</span></td><td><input type="number" min="0" max="${task.maxScore}" id="${'i'+module.id+task.id}" onchange="update()"> /${task.maxScore}<div class="progress-bar"><div class="progress-bar-inner" style="width:0%" id="${'b'+module.id+task.id}"></div></div><span class="small" id="${'t'+module.id+task.id}">--/100% of task</span><br><span class="small" id="${'m'+module.id+task.id}">--/100% of module</span><br><span class="small" id="${'a'+module.id+task.id}">--/100% of all</span></td></tr>`
+        }
+    }
+    return html
+}
+
+function loadCourseScore(course) {
+    const data = modulesData[course];
+    if(localStorage[course]!=undefined){
+        scores = JSON.parse(localStorage[course])
+        for(const module of data.modules){
+            for(const task of module.tasks){
+                id = module.id + task.id
+                document.getElementById('i' + id).value = scores[id]
+            }
+        }
+    }
+    update()
+}
+
+function saveCourseScore(course){
+    scores = {}
+    const data = modulesData[course];
+    for(const module of data.modules){
+        for(const task of module.tasks){
+            id = module.id + task.id
+            scores[id] = document.getElementById('i' + id).value
+        }
+    }
+    localStorage[course] = JSON.stringify(scores)
+}
+
+function fixScore(){
+    if(localStorage['year1'] == undefined && localStorage['scores'] != undefined){
+        localStorage['year1'] = localStorage['scores']
+        localStorage.removeItem('score')
+    }
+}
+
 // updates the progress bars and calculates the average grade
 function update(){
+    const data = modulesData[currentCourse];
     totalpercent = 0
     totalcomplete = 0
     for(const module of data.modules){
@@ -7,6 +74,7 @@ function update(){
         modulecomplete = 0
         for(const task of module.tasks){
             id = module.id + task.id
+            console.log(id)
             taskpercent = ((document.getElementById('i' + id).value / document.getElementById('i' + id).max) * 100);
             modulepercent = taskpercent * task.weight;
             moduletotal += modulepercent;
@@ -23,14 +91,14 @@ function update(){
         document.getElementById('m' + module.id).innerHTML = `${moduletotal.toFixed(2)}/100% of module`
         document.getElementById('a' + module.id).innerHTML = `${moduleallpercent.toFixed(2)}/${(module.credits/data.totalCredits*100).toFixed(2)}% of all`
 
-        
+
         if(modulecomplete==0){
             modulecompletepercent = 0
         }else{
             modulecompletepercent = moduletotal / modulecomplete
         }
 
-        document.getElementById('bc' + module.id).style.width = modulecompletepercent + '%';    
+        document.getElementById('bc' + module.id).style.width = modulecompletepercent + '%';
         moduletotalall = moduletotal * module.credits/data.totalCredits
         modulecompleteall = modulecomplete * module.credits/data.totalCredits
         totalpercent += moduletotalall
@@ -50,115 +118,11 @@ function update(){
     document.getElementById("totalpercent").innerHTML = `${totalpercent.toFixed(2)}% / 100% Total`
     document.getElementById("totalpercentbar").style.width = `${totalpercent.toFixed(2)}%`
     document.getElementById("totalcompletepercent").innerHTML = `${totalpercent.toFixed(2)}% / ${(totalcomplete*100).toFixed(2)}% Completed`
-    
-    saveScore()
+
+    saveCourseScore(currentCourse);
 }
 
-// load modules
-function load(){
-    if(localStorage.data!=undefined){
-        data = JSON.parse(localStorage.data)
-    }else{
-        data = originalData
-    }
-    html = "<tr><th>Module</th><th>Tasks</th><th>Score</th></tr>"
-    for(const module of data.modules){
-        for(const task of module.tasks){
-            if(task.id=='a'){
-                html += `<tr><td rowspan="${module.tasks.length}"><span class="module">${module.name}</span><br><span class="small">(${module.credits} credits - ${(module.credits/data.totalCredits*100).toFixed(2)}%)</span><br><b id="p${module.id}">0.00%</b><br><br><div class="progress-bar"><div class="progress-bar-inner" style="width:0%" id="${'b'+module.id}"></div></div><span class="small" id="${'m'+module.id}">--/100% of module</span><br><span class="small" id="${'a'+module.id}">--/--% of all</span><div class="progress-bar"><div class="progress-bar-inner" style="width:0%" id="${'bc'+module.id}"></div></div><span class="small" id="${'mc'+module.id}">--/--% of module</span><br><span class="small" id="${'ac'+module.id}">--/--% of all</span></td>`
-            }else{
-                html += `<tr>`
-            }
-            html += `<td class="${task.type}">${task.name}<br><span class="small">(${(task.weight*100).toFixed(2)}%)</span><br><span class="small">(${task.date})</span></td><td><input type="number" min="0" max="${task.maxScore}" id="${'i'+module.id+task.id}" onchange="update()"> /${task.maxScore}<div class="progress-bar"><div class="progress-bar-inner" style="width:0%" id="${'b'+module.id+task.id}"></div></div><span class="small" id="${'t'+module.id+task.id}">--/100% of task</span><br><span class="small" id="${'m'+module.id+task.id}">--/100% of module</span><br><span class="small" id="${'a'+module.id+task.id}">--/100% of all</span></td></tr>`
-        }
-    }
-    return html
+window.onload = function() {
+    fixScore();
+    switchCourse(currentCourse);
 }
-
-setTimeout(() => {
-    document.getElementById('table').innerHTML = load()
-    loadScore()
-    document.getElementById('jsoninput').value = JSON.stringify(data,null,4)
-},100)
-
-// load scores
-function loadScore(){
-    restoreCookies()
-    if(localStorage.scores!=undefined){
-        scores = JSON.parse(localStorage.scores)
-        for(const module of data.modules){
-            for(const task of module.tasks){
-                id = module.id + task.id
-                document.getElementById('i' + id).value = scores[id]
-            }
-        }
-    }
-    update()
-}
-
-function saveScore(){
-    scores = {}
-    for(const module of data.modules){
-        for(const task of module.tasks){
-            id = module.id + task.id
-            scores[id] = document.getElementById('i' + id).value
-        }
-    }
-    localStorage.scores = JSON.stringify(scores)
-}
-
-function switchtab(){
-    if(document.getElementById("main").style.display=="none"){
-        document.getElementById("main").style.display="block"
-        document.getElementById("json").style.display="none"
-    }else{
-        document.getElementById("main").style.display="none"
-        document.getElementById("json").style.display="block"
-    }
-}
-
-function updateJSON(){
-    try{
-        data = JSON.parse(document.getElementById("jsoninput").value)
-        localStorage.data = JSON.stringify(data)
-        document.getElementById('table').innerHTML = load()
-        loadScore()
-        switchtab()
-    }catch{
-        window.alert("Invalid JSON!")
-    }
-}
-
-function resetJSON(){
-    document.getElementById("jsoninput").value = JSON.stringify(originalData,null,4)
-    updateJSON()
-}
-
-
-
-// Switching from cookies to local storage for those that had stuff saved in cookies
-
-function restoreCookies(){
-    cookie = getCookie("scores")
-    if(cookie!=''){
-        document.getElementById("notice").style.display = "block"
-        localStorage.scores = cookie
-        document.cookie = "scores=; expires=Thu, 01 Jan 1970 00:00:00 UTC;";
-    }
-}
-
-function getCookie(cname) {
-    let name = cname + "=";
-    let decodedCookie = decodeURIComponent(document.cookie);
-    let ca = decodedCookie.split(';');
-    for(let i = 0; i <ca.length; i++) {
-      let c = ca[i];
-      while (c.charAt(0) == ' ') {
-        c = c.substring(1);
-      }
-      if (c.indexOf(name) == 0) {
-        return c.substring(name.length, c.length);
-      }
-    }
-    return "";
-  }
