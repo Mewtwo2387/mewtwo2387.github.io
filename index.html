@@ -1,57 +1,72 @@
 <html>
     <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title id="title">Ei's Backyard</title>
         <link rel="icon" href="ei.png">
-        <meta name="description" content="A place where @Ei#4497 dumps all his random projects (abandoning it 80% of the time). Don't expect it to work on mobile, not doing the portrait mode css for now.">
+        <meta name="description" content="A place where @.e.i. dumps all his random projects (abandoning it 80% of the time). Don't expect it to work on mobile, not doing the portrait mode css for now.">
         <link rel="stylesheet" href="main.css" type="text/css">
     </head>
     <body>
         <img id="logo" src="logo.png">
         <h3 style="position: relative; top: -50px; color: #bbbbbb;">A place where @Ei#4497 dumps all his random projects (abandoning it 80% of the time). Don't expect it to work on mobile, not doing the portrait mode css for now.</h3>
-        
+
         <!-- main -->
         <div id="main">
-            <div class="thing" style='background-image:linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url("https://10botics.com/wp-content/uploads/2023/05/Transparent_web_logo-1.png")' onclick="window.open('https://dsegpt.10botics.com')"">
-                <div class="overlay"><h3>Click to try! (.edu.hk account required)</h3></div>
-                <h2>DseGPT</h2>
-                <h3>A website to assist English teachers in marking essays, using ChatGPT. It will give a grade and help teachers write comments based on custom marking schemes and instructions, while also providing grammar corrections and sample rewrites. The finished product will be a website similar to Google Classroom, but a trial page to test out the AI is currently avaliable.</h3>
-                <h4>Current Status: </h4><p style="color:lightyellow">Trial Closed - API key turned off.</p>
+            <div class="card" style='background-image:linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url("")' onclick="window.open('Tracker')">
+                <div class="overlay"><h3>Click to enter!</h3></div>
+                <h2>Imperial CS Grade Tracker</h2>
+                <h3>Grade Tracker for Y1 and Y2 Computing. The only useful thing in this list.</h3>
+                <h4>Current Status: </h4><p class="complete-online">Complete with multi course support</p>
             </div>
-            <div class="thing" style='background-image:linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url("Project\ Keqei/assets/images/main/keqei.jpg")' onclick="window.open('Project\ Keqei')"">
-                <div class="overlay"><h3>Click for Teasers!</h3></div>
-                <h2>Project Keqei</h2>
-                <h3>An online multiplayer turn-based RPG 6v6 gacha game, featuring members from TheGenshinPlace (and OC made by the members) as the characters. The storyline focuses on Ei breaking the fourth wall and excaping the world, while Keq and the egirls trying to fix the glitches and diasters caused by Ei.</h3>
-                <h4>Current Status: </h4><p style="color:lightcoral">Discontinued - Replaced with Incursion / Transient Assault</p>
-            </div>
-            <div class="thing" style='background-image:linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url("jsse_modify/static/images/meow.jpg")' onclick="window.open('QueQat')"">
-                <div class="overlay"><h3>Click to try QueQat!</h3></div>
-                <h2>QueQat</h2>
-                <h3>An AI made with Deep Q-Learning, used to reduce queueing time in multi-queue systems where different people have different service times, such as supermarkets. QueQat can assign customers to queues based on their service time, and can reduce the total waiting time by approximately 20%.</h3>
-                <h4>Current Status: </h4><p style="color:lightyellow">Complete, but server is offline.</p>
-            </div>
-            <div class="thing" style='background-image:linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url("Avaritilax/assets/images/main/logo.png")' onclick="window.open('Avaritilax')">
+            <div class="card" style='background-image:linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url("Avaritilax/assets/images/main/logo.png")' onclick="window.open('Avaritilax')">
                 <div class="overlay"><h3>Click to play!</h3></div>
                 <h2>Avaritilax 4</h2>
                 <h3>A remade version of Idle Snorlax 3 with slighly better everything.</h3>
-                <h4>Current Status: </h4><p style="color:lightgreen">Alpha 1.1.3, very slow development.</p>
+                <h4>Current Status: </h4><p class="complete-online">Alpha 1.1.3, very slow development.</p>
+            </div>
+            <div class="card" style='background-image:linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url("")' onclick="window.open('https://github.com/Mewtwo2387/silverwolf')">
+                <div class="overlay"><h3>Click to enter the repo</h3></div>
+                <h2>Silverwolf Bot</h2>
+                <h3>A multipurpose discord bot made by Ei and Xei to do random stuff</h3>
+                <h4>Current Status: </h4><p class="complete-online">In active development</p>
+            </div>
+            <div class="card" style='background-image:linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url("https://10botics.com/wp-content/uploads/2023/05/Transparent_web_logo-1.png")' onclick="window.open('https://dsegpt.10botics.com')"">
+                <div class="overlay"><h3>Click to try! (.edu.hk account required)</h3></div>
+                <h2>DseGPT</h2>
+                <h3>A website to assist English teachers in marking essays, using ChatGPT. It will give a grade and help teachers write comments based on custom marking schemes and instructions, while also providing grammar corrections and sample rewrites. The finished product will be a website similar to Google Classroom, but a trial page to test out the AI is currently avaliable.</h3>
+                <h4>Current Status: </h4><p class="complete-offline">Trial Closed - API key turned off.</p>
+            </div>
+            <div class="card" style='background-image:linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url("Project\ Keqei/assets/images/main/keqei.jpg")' onclick="window.open('Project\ Keqei')"">
+                <div class="overlay"><h3>Click for Teasers!</h3></div>
+                <h2>Project Keqei</h2>
+                <h3>An online multiplayer turn-based RPG 6v6 gacha game, featuring members from TheGenshinPlace (and OC made by the members) as the characters. The storyline focuses on Ei breaking the fourth wall and excaping the world, while Keq and the egirls trying to fix the glitches and diasters caused by Ei.</h3>
+                <h4>Current Status: </h4><p class="discontinued">Discontinued - Replaced with Incursion / Transient Assault</p>
+            </div>
+            <div class="card" style='background-image:linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url("jsse_modify/static/images/meow.jpg")' onclick="window.open('QueQat')"">
+                <div class="overlay"><h3>Click to try QueQat!</h3></div>
+                <h2>QueQat</h2>
+                <h3>An AI made with Deep Q-Learning, used to reduce queueing time in multi-queue systems where different people have different service times, such as supermarkets. QueQat can assign customers to queues based on their service time, and can reduce the total waiting time by approximately 20%.</h3>
+                <h4>Current Status: </h4><p class="complete-offline">Complete, but server is offline.</p>
             </div>
 
-            <div class="thing" style="background-color:#333" onclick="opentab('tiny')">
+            <div class="card" style="background-color:#333" onclick="opentab('tiny')">
                 <div class="overlay"><h3>Click to enter the resinless land</h3></div>
                 <table>
                     <tbody>
                         <tr>
-                            <td style="width:90%">
+                            <td style="width:10%"><img class="card-img" src="/sliver.webp"></td>
+                            <td style="width:80%">
                                 <h2>Vajrada Amethyst Sliver</h2>
                                 <h3>A bunch of tiny projects I did when I'm <strike>out of resin</strike> bored</h3>
                             </td>
-                            <td style="width:10%"><img class="arrow" src="/arrow-right.png"></td>
+                            <td style="width:10%"><img class="card-img" src="/arrow-right.png"></td>
                         </tr>
                     </tbody>
                 </table>
             </div>
 
-            <div class="thing" style="background-color:#333" onclick="opentab('gamejam')">
+            <div class="card" style="background-color:#333" onclick="opentab('gamejam')">
                 <div class="overlay"><h3>Click to start time trial</h3></div>
                 <table>
                     <tbody>
@@ -60,13 +75,13 @@
                                 <h2>Time Trials</h2>
                                 <h3>Projects done in a limited time during gamejams or whatever hackathon</h3>
                             </td>
-                            <td style="width:10%"><img class="arrow" src="/arrow-right.png"></td>
+                            <td style="width:10%"><img class="card-img" src="/arrow-right.png"></td>
                         </tr>
                     </tbody>
                 </table>
             </div>
-            
-            <div class="thing" style="background-color:#333" onclick="opentab('old')">
+
+            <div class="card" style="background-color:#333" onclick="opentab('old')">
                 <div class="overlay"><h3>Click to enter the abandoned land</h3></div>
                 <table>
                     <tbody>
@@ -75,22 +90,23 @@
                                 <h2>Island of the Lost and Forgotten</h2>
                                 <h3>A bunch of old and abandoned projects, the oldest one was made with block code years before I even started actual programming. Nothing much to really try in here, they all suck.</h3>
                             </td>
-                            <td style="width:10%"><img class="arrow" src="/arrow-right.png"></td>
+                            <td style="width:10%"><img class="card-img" src="/arrow-right.png"></td>
                         </tr>
                     </tbody>
                 </table>
             </div>
 
-            <div class="thing" style="background-color:#333" onclick="window.open('https://github.com/Mewtwo2387/basement')">
+            <div class="card" style="background-color:#333" onclick="window.open('https://github.com/Mewtwo2387/basement')">
                 <div class="overlay"><h3>Click to for the Github Repo</h3></div>
                 <table>
                     <tbody>
                         <tr>
-                            <td style="width:90%">
+                            <td style="width:10%"><img class="card-img" src="/github.png"></td>
+                            <td style="width:80%">
                                 <h2>The Basement's Collective Repo</h2>
                                 <h3>Some random people making random stuff like compilers, fork bombs, memory leaks, and games</h3>
                             </td>
-                            <td style="width:10%"><img class="arrow" src="/arrow-right.png"></td>
+                            <td style="width:10%"><img class="card-img" src="/arrow-right.png"></td>
                         </tr>
                     </tbody>
                 </table>
@@ -101,30 +117,30 @@
 
         <!-- old -->
         <div id="old" style="display:none">
-            <div class="thing" style='background-image:linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url("SC3/assets/main/snorlax2.png")' onclick="window.open('SC3')">
+            <div class="card" style='background-image:linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url("SC3/assets/main/snorlax2.png")' onclick="window.open('SC3')">
                 <div class="overlay"><h3>Click to play!</h3></div>
                 <h2>Idle Snorlax 3</h2>
                 <h3>A sequel to Idle Snorlax 2, made with HTML instead.</h3>
-                <h4>Current Status: </h4><p>Discontinued</p>
+                <h4>Current Status: </h4><p class="discontinued">Discontinued</p>
             </div>
-            <div class="thing" style='background-image:linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url("SC3/assets/main/snorlax1.png")' onclick="window.open('SC2.apk')">
+            <div class="card" style='background-image:linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url("SC3/assets/main/snorlax1.png")' onclick="window.open('SC2.apk')">
                 <div class="overlay"><h3>Click to download .apk for Android!</h3></div>
                 <h2>Idle Snorlax 2</h2>
                 <h3>A sequel to Idle Snorlax.</h3>
-                <h4>Current Status: </h4><p>Discontinued</p>
+                <h4>Current Status: </h4><p class="discontinued">Discontinued</p>
             </div>
-            <div class="thing" style='background-image:linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url("SC3/assets/main/snorlax1.png")'>
+            <div class="card" style='background-image:linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url("SC3/assets/main/snorlax1.png")'>
                 <div class="overlay"><h3>Nothing to do here.</h3></div>
                 <h2>Idle Snorlax</h2>
                 <h3>Snorlax Something something</h3>
-                <h4>Current Status: </h4><p>Discontinued</p>
+                <h4>Current Status: </h4><p class="discontinued">Discontinued</p>
             </div>
-            <div class="thing" style="background-color:#333" onclick="opentab('main')">
+            <div class="card" style="background-color:#333" onclick="opentab('main')">
                 <div class="overlay"><h3>Click to leave the abandoned land</h3></div>
                 <table>
                     <tbody>
                         <tr>
-                            <td style="width:10%"><img class="arrow" src="/arrow-left.png"></td>
+                            <td style="width:10%"><img class="card-img" src="/arrow-left.png"></td>
                             <td style="width:90%">
                                 <h2>Back to the Future</h2>
                                 <h3>Return to the newer projects</h3>
@@ -138,42 +154,36 @@
 
         <!-- tiny -->
         <div id="tiny" style="display:none">
-            <div class="thing" style='background-image:linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url("")' onclick="window.open('Tracker')">
-                <div class="overlay"><h3>Click to enter!</h3></div>
-                <h2>Imperial CS Y1 Tracker</h2>
-                <h3>The only useful thing in this list.</h3>
-                <h4>Current Status: </h4><p style="color:lightgreen">Complete with editable JSON</p>
-            </div>
-            <div class="thing" style='background-image:linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url("Keqboard/keqboard.webp")' onclick="window.open('Keqboard')">
+            <div class="card" style='background-image:linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url("Keqboard/keqboard.webp")' onclick="window.open('Keqboard')">
                 <div class="overlay"><h3>Click to enter!</h3></div>
                 <h2>Keqboard</h2>
                 <h3>A completely useless program that "translates" stuff into weirder stuff (,,,,,,ffffffuwut9s[ wedwieuwu[ otni[ ffffffuwut9s[ "9setw9snwt"[ tht[ mwgowp[ 9s9sewe9suwu[ eiwetewpmoc[  ,,,!!!eifmoo iah)</h3>
-                <h4>Current Status: </h4><p style="color:lightgreen">Adding stuff whenever I find another weird keyboard</p>
+                <h4>Current Status: </h4><p class="complete-online">Adding stuff whenever I find another weird keyboard</p>
             </div>
-            <div class="thing" style='background-image:linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url("Collatz/image.jpg")' onclick="window.open('Collatz')">
+            <div class="card" style='background-image:linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url("Collatz/image.jpg")' onclick="window.open('Collatz')">
                 <div class="overlay"><h3>Click to enter!</h3></div>
                 <h2>Binary Collatz Sequence</h2>
                 <h3>The Collatz Sequence forms some cool pattern in binary for big numbers. And a hot computer for even bigger numbers.</h3>
-                <h4>Current Status: </h4><p style="color:lightgreen">Complete!</p>
+                <h4>Current Status: </h4><p class="complete-online">Complete!</p>
             </div>
-            <div class="thing" style='background-image:linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url("Astro/image.jpg")' onclick="window.open('Astro')">
+            <div class="card" style='background-image:linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url("Astro/image.jpg")' onclick="window.open('Astro')">
                 <div class="overlay"><h3>Click to enter!</h3></div>
                 <h2>Astro</h2>
                 <h3>Generates a fake star map, for whatever reason. Maybe you can connect them to form your own constellations if you're really that bored and have nothing productive to do. This generator is just a side product of testing with dynamic css.</h3>
-                <h4>Current Status: </h4><p style="color:lightcoral">???</p>
+                <h4>Current Status: </h4><p class="discontinued">???</p>
             </div>
-            <div class="thing" style='background-image:linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url("OC/image.jpg")' onclick="window.open('OC')">
+            <div class="card" style='background-image:linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url("OC/image.jpg")' onclick="window.open('OC')">
                 <div class="overlay"><h3>Click to enter!</h3></div>
                 <h2>OCs something something</h2>
                 <h3>Some genshin OCs made by <del>our fellow degenerates</del> GenshinPlace members. They are on Genshin OC Fandom, but the fandom aren't ours so we can't add the CSS for the glitched text or flying aircraft carriers there. <del>So this is objectively better.</del></h3>
-                <h4>Current Status: </h4><p style="color:lightcoral">???</p>
+                <h4>Current Status: </h4><p class="discontinued">???</p>
             </div>
-            <div class="thing" style="background-color:#333" onclick="opentab('main')">
+            <div class="card" style="background-color:#333" onclick="opentab('main')">
                 <div class="overlay"><h3>Click to return to the larger projects</h3></div>
                 <table>
                     <tbody>
                         <tr>
-                            <td style="width:10%"><img class="arrow" src="/arrow-left.png"></td>
+                            <td style="width:10%"><img class="card-img" src="/arrow-left.png"></td>
                             <td style="width:90%">
                                 <h2>Vajrada Amethyst Gemstone</h2>
                                 <h3>Return to the larger projects</h3>
@@ -187,18 +197,18 @@
 
         <!-- gamejam -->
         <div id="gamejam" style="display:none">
-            <div class="thing" style='background-image:linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url("")' onclick="window.open('https://stanly-c.itch.io/meme-warrior')">
+            <div class="card" style='background-image:linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url("")' onclick="window.open('https://stanly-c.itch.io/meme-warrior')">
                 <div class="overlay"><h3>Click to play!</h3></div>
                 <h2>Meme Warrior</h2>
                 <h3>Imperial GameDev Society's game for the 2024 Global Game Jam. The topic this year is "Make me laugh", which is kinda hard and limited compared to the previous years. Our idea was to use memes to "attack" a lawyer that banned memes to defeat him by making him laugh.</h3>
-                <h4>Current Status: </h4><p style="color:lightgreen">Complete!</p>
+                <h4>Current Status: </h4><p class="complete-online">Complete!</p>
             </div>
-            <div class="thing" style="background-color:#333" onclick="opentab('main')">
+            <div class="card" style="background-color:#333" onclick="opentab('main')">
                 <div class="overlay"><h3>Click to end time trial</h3></div>
                 <table>
                     <tbody>
                         <tr>
-                            <td style="width:10%"><img class="arrow" src="/arrow-left.png"></td>
+                            <td style="width:10%"><img class="card-img" src="/arrow-left.png"></td>
                             <td style="width:90%">
                                 <h2>End trial</h2>
                                 <h3>Return to the main projects</h3>

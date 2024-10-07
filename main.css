@@ -23,7 +23,7 @@ p{margin-left:10px}
     display:block;
     height:216px;
 }
-.thing{
+.card{
     margin-left: 5%;
     margin-right: 5%;
     border: 3px solid gray;
@@ -44,7 +44,7 @@ p{margin-left:10px}
     justify-content:center;
     align-items:center;
 }
-.thing:hover > .overlay{
+.card:hover > .overlay{
     visibility:initial;
 }
 table{
@@ -53,8 +53,18 @@ table{
     margin-right:0.83em;
     width: -webkit-fill-available;
 }
-.arrow{
+.card-img{
     margin-left: auto;
     margin-right: auto;
     display: block;
+    height: 100px;
+}
+.complete-online{
+    color:lightgreen;
+}
+.complete-offline{
+    color:lightyellow;
+}
+.discontinued{
+    color:lightcoral;
 }
