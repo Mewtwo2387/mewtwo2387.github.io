@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Machine</title>
+</head>
+<body>
+    <h1>Register Machine</h1>
+    <label for="registers_count">Registers Count</label>
+    <input type="number" min="1" max="9" id="registers_count" name="registers_count" value="4" onchange="updateRegisters()">
+    <br>
+    <div id="registers-value">
+        <input type="text" id="line" name="line" value="0" min="0" placeholder="L">
+        <input type="text" id="register-0" name="register-0" value="0" min="0" placeholder="R0">
+        <input type="text" id="register-1" name="register-1" value="0" min="0" placeholder="R1">
+        <input type="text" id="register-2" name="register-2" value="0" min="0" placeholder="R2">
+        <input type="text" id="register-3" name="register-3" value="0" min="0" placeholder="R3">
+    </div>
+    <label for="instructions">Instructions</label>
+    <br>
+    <textarea id="instructions" name="instructions" rows="10" placeholder="1- 1 7
+0+ 2
+2- 3 5
+3+ 4
+0+ 1
+2+ 6
+3- 5 0"></textarea>
+    <br>
+    <button onclick="run()">Run</button>
+    <br>
+    <div id="output"></div>
+</body>
+<script>
+    function updateRegisters() {
+        var registers_count = document.getElementById("registers_count").value;
+        var html = "<input type='text' id='line' name='line' value='0' min='0' placeholder='L'>";
+        for (var i = 0; i < registers_count; i++) {
+            html += `<input type="text" id="register-${i}" name="register-${i}" value="0" min="0">`;
+        }
+        document.getElementById("registers-value").innerHTML = html;
+    }
+    function run() {
+        var registers_count = document.getElementById("registers_count").value;
+        var registers = []
+        for (var i = 0; i < registers_count; i++) {
+            registers.push(parseInt(document.getElementById(`register-${i}`).value))
+        }
+        var line = parseInt(document.getElementById("line").value);
+        var instructions = document.getElementById("instructions").value;
+        var instructionsArray = instructions.split("\n");
+        var output = "";
+        while (line < instructionsArray.length){
+            output += `${line} `
+            for (var i = 0; i < registers_count; i++) {
+                output += `${registers[i]} `
+            }
+            output += "<br>"
+            console.log(output)
+            var instruction = instructionsArray[line];
+            var instructionParts = instruction.split(" ");
+            var reg = parseInt(instructionParts[0][0])
+            var op = instructionParts[0][1]
+            if (isNaN(reg)){
+                output += `Invalid register at line ${line}: ${instruction}<br>`
+                break
+            }
+            if (reg < 0 || reg >= registers_count){
+                output += `Register out of bounds at line ${line}: ${instruction}<br>`
+                break
+            }
+            if (op == "+"){
+                registers[reg] += 1
+                line = parseInt(instructionParts[1])
+                if (isNaN(line)){
+                    output += `Invalid jump at line ${line}: ${instruction}<br>`
+                    break
+                }
+            }else if (op == "-"){
+                if (registers[reg] > 0){
+                    registers[reg] -= 1
+                    line = instructionParts[1]
+                }else{
+                    line = instructionParts[2]
+                }
+                if (isNaN(line)){
+                    output += `Invalid jump at line ${line}: ${instruction}<br>`
+                    break
+                }
+            }else{
+                output += `Invalid instruction at line ${line}: ${instruction}<br>`
+                break
+            }
+        }
+        output += `<b>${line} `
+        for (var i = 0; i < registers_count; i++) {
+            output += `${registers[i]} `
+        }
+        output += "</b>"
+        document.getElementById("output").innerHTML = output
+    }
+
+</script>
+</html>
+
